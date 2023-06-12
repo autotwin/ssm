@@ -1,2 +1,2 @@
 # ssm
-Sierra Solid Mechanics simulation
+Sierra Solid Mechanics simulations
