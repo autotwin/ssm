@@ -1,6 +1,36 @@
 #!/bin/bash
 
-sierra -T 12:00:00 --queue-name batch --account FY180100 -j 128 --job-name bob_066 --run --post adagio -i bob-1mm-5kg-helmet2-0305-hemi-066b.i
+module purge
+module load sierra
+module load seacas
+
+# previously ran with 16 processors
+# PROCS=16
+# 10 nodes = 160 processors
+# PROCS=160
+# PROCS=320
+PROCS=336
+
+# geometry and mesh file
+# GFILE="../geometry/bob-1mm-5kg-helmet2-hemi.g"
+GFILE="/projects/sibl/data/bob-1mm-5kg-helmet-hemi/bob-1mm-5kg-helmet2-hemi.g"
+
+# sierra solid mechanics input file
+IFILE="bob-1mm-5kg-helmet2-0305-hemi-066b.i"
+
+decomp --processors $PROCS $GFILE
+
+# short can be used for nodes <= 40 and wall time <= 4:00:00 (4 hours)
+
+sierra -T 0:20:00 --queue-name batch,short --account FY180042 -j $PROCS --job-name $IFILE --run --post adagio -i $IFILE
+# sierra -T 4:30:00 --queue-name batch,short --account FY180042 -j $PROCS --job-name $IFILE --run --post adagio $IFILE
+# sierra -T 4:00:00 --queue-name batch,short --account FY180042 -j $PROCS --job-name vox_0.1cm_p --run --post adagio -i smooth_0.1cm.i
+# sierra --queue-name batch --account FY180042 -j 16 --job-name vox_0.1cm_p --pre --run --post adagio -i vox_0.1cm.i 
+# sierra --queue-name batch --account FY180042 -j 16 --job-name vox_0.1cm_p --run --post adagio -i vox_0.1cm.i 
+# sierra --queue-name batch --account FY180042 -j 16 --job-name vox_0.1cm_p --run --post adagio -i vox_0.1cm.i -T 4:00:00
+# sierra --time 04:00:00 --queue-name batch --account FY180042 -j 16 --job-name vox_0.1cm_p --run --post adagio -i vox_0.1cm.i 
+# sierra -T 04:00:00 --queue-name batch --account FY180042 -j 16 --job-name vox_0.1cm_p --run --post adagio -i vox_0.1cm.i 
+#sierra -T 12:00:00 --queue-name batch --account FY180100 -j 128 --job-name bob_066 --run --post adagio -i bob-1mm-5kg-helmet2-0305-hemi-066b.i
 #sierra -T 24:00:00 --queue-name batch --account FY180100 -j 128 --job-name bob_065d --pre --run --post adagio -i bob-1mm-5kg-helmet2-0305-hemi-065d.i
 #sierra -T 1:00:00 --account FY139077 -j 40 --job-name versa_void --post adagio -i 4inch_sce.i
 #sierra presto_itar -i 3inchOD_Ogive_32lb_Perforation.i --PROJTASK=FY128666 -j 8 --jobName=presto --pre --run --post -T 8:00:00 
