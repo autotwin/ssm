@@ -728,7 +728,8 @@ begin sierra simulation_name
 
   begin finite element model crush
 
-      database name = ../geometry/bob-1mm-5kg-helmet2-hemi.g
+      database name = /projects/sibl/data/bob-1mm-5kg-helmet-hemi/bob-1mm-5kg-helmet2-hemi.g
+    # database name = ../geometry/bob-1mm-5kg-helmet2-hemi.g
     # database name = ../../geometry/data/bob-1mm-5kg-helmet-hemi/bob-1mm-5kg-helmet2-hemi.g
     # database name = /projects/sibl/geometry/data/bob-1mm-5kg-helmet-hemi/bob-1mm-5kg-helmet2-hemi.g
     # database name = /projects/sibl/geometry/data/bob-1mm-5kg-helmet-hemi/bob-1mm-5kg-helmet-hemi.g
