@@ -1,23 +1,29 @@
 # ssm
+
 Sierra Solid Mechanics simulations
 
 ## Goal
 
-* A working SSM simulation that uses
-  * Mesh of brain from autotwin,
-  * Material properties for white matter (WM) from Terpsma 2020 (e.g., the *Mil Med* material properties),
-  * RMU boundary conditions.
+* Reproduce the *Mil Med* workflow.
+* Substitute BCs: Compare RMU `8 krad/s` `8 ms` [boundary condition](https://github.com/autotwin/basis?tab=readme-ov-file#methods).
+* Substitue mesh: Substitute Bob model with Autotwin [two material model](https://github.com/autotwin/pixel).
+
+Boundary Condition | Model
+:--- | :---:
+![](figs/Terpsma_2020_Figure_4-10.png) | ![](figs/Terpsma_2020_Figure_C-4.png)
+![](figs/AngAccel.png)| ![](figs/autotwin_bi_material_voxels.png)
 
 ## Start Point
 
-* `Bob-066b` - Terpsma 2020 SAND, at page 22, Table 3-1, helmeted Bob onto inclined anvil is simulation reference `Bob-066b`.
-  * Boundary condition: experimental angular velocity time history (Figure 4-11), which is a time integration of the angular acceleration time history (Figure 4-10), around `X` axis ("yes" gesture head rotation).
-  * `Z` axis is vertical (superior/inferior axis in Figure 4-9),
-  * `Y` axis horizontal (anterior/posterior axis in Figure 4-9).
+Axes | Figure
+:--- | :---:
+`X` axis is right to left ("yes" gesture head rotation).</br>`Z` axis is vertical (inferior to superior axis in Figure 4-9),</br> * `Y` axis horizontal (anterior to posterior axis in Figure 4-9).</br> | ![](figs/Terpsma_2020_Figure_C-4.png)
 
 Linear Acceleration | Rotational Acceleration | Rotational Velocity
 :--: | :--: | :--:
 ![](figs/Terpsma_2020_Figure_4-9.png) | ![](figs/Terpsma_2020_Figure_4-10.png) | ![](figs/Terpsma_2020_Figure_4-11.png)
+
+> *Figure #*  `Bob-066b` - Terpsma 2020 SAND, at page 22, Table 3-1, helmeted Bob onto inclined anvil is simulation reference `Bob-066b`.  Boundary condition: experimental angular velocity time history (Figure 4-11), which is a time integration of the angular acceleration time history (Figure 4-10), around `X` axis ("yes" gesture head rotation).
 
 The SSM input file: [`bob-1mm-5kg-helmet2-0305-hemi-066b.i`](input/bob-1mm-5kg-helmet2-0305-hemi-066b.i), from Terpsma 2020 at page 165
 
