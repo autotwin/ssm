@@ -5,11 +5,11 @@ module load sierra
 module load seacas
 
 # previously ran with 16 processors
-PROCS=16
+# PROCS=16
 # 10 nodes = 160 processors
 # PROCS=160
 # PROCS=320
-# PROCS=336
+PROCS=336
 
 # geometry and mesh file
 # GFILE="../geometry/bob-1mm-5kg-helmet2-hemi.g"

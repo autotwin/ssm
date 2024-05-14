@@ -116,9 +116,7 @@ begin sierra simulation_name
   end function ramp
 
   {include("../../bcs/skull_rotate.txt")}
-
   {include("../../bcs/VelY.txt")}
-
   {include("../../bcs/VelZ.txt")}
 
   # ---------------------------------------------------------------------------
@@ -943,12 +941,13 @@ begin sierra simulation_name
 
       end time stepping block phase_1
 
-        termination time = 0.0001 # second
+      # termination time = 0.0001 # second
       # termination time = 0.001 # second
       # termination time = 0.006 # second
       # termination time = 0.008 # second
-      # termination time = 0.010 # second
+        termination time = 0.010 # second
       # termination time = 0.012 # second
+      # termination time = 0.020 # second
       # termination time = 0.025 # second
       # termination time = 0.035 # second
       # termination time = 0.040 # second
@@ -1118,7 +1117,8 @@ begin sierra simulation_name
         database type = exodusII
       # at time 0.0 increment = 0.00002 # seconds
       # at time 0.0 increment = 0.0001 # seconds
-        at time 0.0 increment = 0.0002 # seconds
+      # at time 0.0 increment = 0.0002 # seconds
+        at time 0.0 increment = 0.001  # seconds
       # at time 0.0 increment = 0.010  # seconds
  
         # ----------
@@ -1183,9 +1183,10 @@ begin sierra simulation_name
 
         stream name = history.csv
         format = SpyHis
-        at time 0.0 increment = 0.00002    # seconds, 50,000 Hz acquisition
+      # at time 0.0 increment = 0.00002    # seconds, 50,000 Hz acquisition
       # at time 0.0 increment = 3.00003e-5 # seconds, 33,333 Hz acquisition
       # at time 0.0 increment = 0.0001     # seconds, 10,000 Hz acquisition
+        at time 0.0 increment = 0.0005     # seconds,  2,000 Hz acquisition
 
         # -----------------------------
         # helmet
@@ -1306,9 +1307,10 @@ begin sierra simulation_name
 
         stream name = rigid_history.csv
         format = SpyHis
-        at time 0.0 increment = 0.00002    # seconds, 50,000 Hz acquisition
+      # at time 0.0 increment = 0.00002    # seconds, 50,000 Hz acquisition
       # at time 0.0 increment = 3.00003e-5 # seconds, 33,333 Hz acquisition
       # at time 0.0 increment = 0.0001     # seconds, 10,000 Hz acquisition
+        at time 0.0 increment = 0.0005     # seconds,  2,000 Hz acquisition
 
         # -----------------------------
         # rigid body
