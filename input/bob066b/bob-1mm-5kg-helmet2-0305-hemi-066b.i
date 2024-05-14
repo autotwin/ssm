@@ -1,5 +1,9 @@
 begin sierra simulation_name
 
+  # Reproduce original Military Medicine results, created with
+  # https://cee-gitlab.sandia.gov/chovey/casco_sim/-/blob/master/bob-1mm-5kg-helmet2-0305-hemi-066b/bob-1mm-5kg-helmet2-0305-hemi-066b.i
+  # commit hash: d6872e0e022ec7db029db3951fba65d1ce18c76e
+
   # ------------------------------------
   # units: grams, centimeters, seconds
   # -----

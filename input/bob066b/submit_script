@@ -6,7 +6,10 @@ module load seacas
 
 # previously ran with 16 processors
 PROCS=16
+# skybridge has 16 cores per node
 # 10 nodes = 160 processors
+# eclipse has 36 cores per node
+# 10 nodes = 360 processors
 # PROCS=160
 # PROCS=320
 # PROCS=336
@@ -17,14 +20,14 @@ PROCS=16
 # GFILE="/projects/sibl/data/bob-1mm-5kg-helmet-hemi/bob-1mm-5kg-helmet2-hemi.g"
 GFILE="../../geometry/bob-1mm-5kg-helmet2-hemi.g"
 
+# decomp --processors $PROCS $GFILE
+
 # sierra solid mechanics input file
 IFILE="bob-1mm-5kg-helmet2-0305-hemi-066b.i"
 
-# decomp --processors $PROCS $GFILE
-
 # short can be used for nodes <= 40 and wall time <= 4:00:00 (4 hours)
 
-sierra -T 0:20:00 --queue-name batch,short --account FY180042 -j $PROCS --job-name $IFILE --run --post adagio -i $IFILE
+sierra -T 03:50:00 --queue-name batch,short --account FY180042 -j $PROCS --job-name $IFILE --run --post adagio -i $IFILE
 # sierra -T 4:30:00 --queue-name batch,short --account FY180042 -j $PROCS --job-name $IFILE --run --post adagio $IFILE
 # sierra -T 4:00:00 --queue-name batch,short --account FY180042 -j $PROCS --job-name vox_0.1cm_p --run --post adagio -i smooth_0.1cm.i
 # sierra --queue-name batch --account FY180042 -j 16 --job-name vox_0.1cm_p --pre --run --post adagio -i vox_0.1cm.i 

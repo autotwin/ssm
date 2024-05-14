@@ -6,6 +6,9 @@
 *.out
 g.rsout.*
 
+# macOS database files
+.DS_Store
+
 # ignore .vscode folder
 .vscode
 
