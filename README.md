@@ -28,7 +28,7 @@ item | `sim` | mesh | bc | T_sim | machine | # proc | cpu time (hh:mm) | wall ti
 0 | [`vox_0.1cm`](https://github.com/autotwin/basis?tab=readme-ov-file#voxel-meshes) | spheres | 8x8 | 20 ms | skybridge | 160 | 01:43 | 11.5
 1 | `bob066b` | Bob | 10x3 | xxx ms | eclipse | 336 | xxx | xxx 
 2 | `bob067` | Bob | 10x3 | xxx ms | eclipse | 336 | xxx | xxx
-3 | `sci001` | T1_Utah_SCI | 10x3 | 5 | 6 | 7 | 8 | 9
+3 | [`sci001`](https://github.com/autotwin/mesh/tree/main/doc/T1_Utah_SCI_brain) | T1_Utah_SCI | 10x3 | 5 | 6 | 7 | 8 | 9
 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9
 
 ## References
