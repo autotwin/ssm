@@ -1,0 +1,20 @@
+  # ---------------------
+  begin material al6061t6
+  # ---------------------
+
+    # asm.matweb.com, ma6061t6
+      
+    density = 2.77                 # g/cc = 0.098 lb/in^3
+      
+    begin parameters for model elastic_plastic
+
+      youngs modulus    =  68.9e10 # dyne/cm^2 = 10e6 psi = 68.9 GPa
+      poissons ratio    =   0.33   # cm/cm     = unitless
+      yield stress      = 276.0e7  # dyne/cm^2 = 40e3 psi = 276 MPa
+      hardening modulus =  68.9e7  # dyne/cm^2 = 10e3 psi =  68 MPa
+      beta              =   1.0    # unitless 
+      
+    end parameters for model elastic_plastic
+
+  end material al6061t6
+

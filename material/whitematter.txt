@@ -1,0 +1,57 @@
+  # ------------------------
+  begin material whitematter
+  # ------------------------
+  
+    # reference: Morse 2014, C. Franck Lacrosse paper
+    # general brain: neo-Hookean, K=2190 MPa, mu = 22.53 kPa; rho = 1040 kg/m^3
+    # materials properties QC 2019-06-25 CBH with Materials for Casco document
+    # for placeholder elastic and Swanson viscoelastic
+
+    density = 1.040 # g/cc
+
+    # placeholder prior to Swanson
+    # begin parameters for model elastic
+    #   youngs modulus  =   1.50e8 # dyne/cm^2 = 15.0 MPa
+    #   poissons ratio  =   0.45   # cm/cm = unitless
+    # end parameters for model elastic
+
+    begin parameters for model viscoelastic_swanson
+      bulk modulus  =   2.371e10 # dyne/cm^2 = 2.371e9 Pa 
+#     shear modulus =   4.100e5  # dyne/cm^2 
+      A1            =   4.100e5  # dyne/cm^2
+      P1            =   0
+      B1            =   0
+      Q1            =   0
+      C1            =   0
+      R1            =   0
+      cut off strain        =  0.05
+      prony shear infinity  = 1.9024e-1  # Pa/Pa
+      prony shear 1         = 8.0976e-1  # Pa/Pa
+      prony shear 2         = 1.0e-4
+      prony shear 3         = 1.0e-4
+      prony shear 4         = 1.0e-4
+      prony shear 5         = 1.0e-4
+      prony shear 6         = 1.0e-4
+      prony shear 7         = 1.0e-4
+      prony shear 8         = 1.0e-4
+      prony shear 9         = 1.0e-4
+      prony shear 10        = 1.0e-4
+      # shear relax time 1    = 2.50e-2  # seconds, formerly 1.4286e-3 s
+      shear relax time 1    = 1.4286e-3  # seconds, investigate quick relaxation
+      shear relax time 2    = 100
+      shear relax time 3    = 150
+      shear relax time 4    = 200
+      shear relax time 5    = 250
+      shear relax time 6    = 300
+      shear relax time 7    = 350
+      shear relax time 8    = 400
+      shear relax time 9    = 450
+      shear relax time 10   = 500
+      wlf coef c1           = 1.0
+      wlf coef c2           = 1.0
+      wlf tref              = 298
+      MAX POISSONS RATIO    = 0.49
+    end parameters for model viscoelastic_swanson
+
+  end material whitematter
+

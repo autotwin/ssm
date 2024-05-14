@@ -1,0 +1,16 @@
+  # -------------------
+  begin material muscle # exactly copy of skin for now 2019-02-18
+                        # needs migration to match CTH Swanson model usage
+  # -------------------
+  
+    # materials properties QC 2019-06-25 CBH with Materials for Casco document
+
+    density = 1.200 # g/cc
+
+    begin parameters for model elastic
+      youngs modulus  =   1.67e8 # dyne/cm^2 = 1.67e7 Pa
+      poissons ratio  =   0.42   # cm/cm = unitless
+    end parameters for model elastic
+
+  end material muscle 
+

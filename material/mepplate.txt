@@ -1,0 +1,21 @@
+  # ---------------------
+  begin material mepplate
+  # ---------------------
+      
+    # MEP plate, cf Malave email 2018-11-20-1232
+    # Note: MEP (pad + plate) = 974.85 g (combined)
+    # materials properties QC 2019-06-25 CBH with Materials for Casco document
+
+    # density = 2.700 # g/cc, should yield plate mass 507.195 g
+    density = 2.540 # g/cc, should yield plate mass 507.195 g
+                    # update to make sim mass match exp mass 
+      
+    begin parameters for model elastic
+
+      youngs modulus    =  6.89e11 # dyne/cm^2 = 10e6 psi = 6.89e10 Pa
+      poissons ratio    =   0.33   # cm/cm     = unitless
+
+    end parameters for model elastic
+
+  end material mepplate
+

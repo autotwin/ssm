@@ -1,0 +1,15 @@
+  # ---------------------
+  begin material membrane # formerly ft for falx-tentorium in Lud
+  # ---------------------
+  
+    # materials properties QC 2019-06-25 CBH with Materials for Casco document
+
+    density = 1.133 # g/cc
+
+    begin parameters for model elastic
+      youngs modulus  =   3.15e8 # dyne/cm^2 = 3.15e7 Pa
+      poissons ratio  =   0.45   # cm/cm = unitless
+    end parameters for model elastic
+
+  end material membrane
+

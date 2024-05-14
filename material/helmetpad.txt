@@ -1,0 +1,18 @@
+  # ---------------------
+  begin material helmetpad # formerly pads in Lud
+  # ---------------------
+
+    # materials properties QC 2019-06-25 CBH with Materials for Casco document
+
+    density = 0.140 # g/cc
+
+    begin parameters for model elastic_plastic
+      youngs modulus  =  7.00e7 # dyne/cm^2 = 7.00e6 Pa
+      poissons ratio  =    0.20 # cm/cm = unitless
+      yield stress    =   2.5e6 # dyne/cm^2 = 2.5e5 Pa
+      hardening modulus = 7.0e6 # dyne/cm^2 = 7.0e5 Pa 
+      beta = 0.5                # unitless
+    end parameters for model elastic_plastic
+
+  end material helmetpad
+

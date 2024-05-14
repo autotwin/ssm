@@ -1,0 +1,21 @@
+  # ----------------
+  begin material csf # cerebral spinal fluid
+  # ----------------
+
+    # materials properties QC 2019-06-25 CBH with Materials for Casco document
+  
+    density = 1.004 # g/cc
+
+    begin parameters for model elastic
+      # 2019-07-16 starting with Bob-035, specific (K, G) because less
+      # sensitive than specifiying nu ~= 0.499
+      #
+      # youngs modulus  =   1.50e8    # dyne/cm^2 = 15.0 MPa
+      # poissons ratio  =   0.4987252 # cm/cm = unitless
+      #
+      shear modulus     =   5.000e3   # dyne/cm^2 = 500 Pa, matches Zhang 2001
+      bulk modulus      =   2.371e10  # dyne/cm^2 (match K for gray and white matter)
+    end parameters for model elastic
+
+  end material csf
+

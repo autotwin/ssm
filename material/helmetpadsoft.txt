@@ -1,0 +1,89 @@
+  # --------------------------
+  begin material helmetpadsoft # from cyl-1mm-non-0305-soft-039.i
+  # --------------------------
+
+    # reference: Morse 2014, C. Franck Lacrosse paper
+    # general brain: neo-Hookean, K=2190 MPa, mu = 22.53 kPa; rho = 1040 kg/m^3
+    # materials properties QC 2019-06-25 CBH with Materials for Casco document
+    # for placeholder elastic and Swanson viscoelastic
+
+    # density = 0.056 # g/cc, 14.15 g / 250.518 cc = 0.059 
+    density   = 1.047e-1 # g/cc  # 2019-08-09 match Sushant measured mass
+
+    begin parameters for model elastic
+      youngs modulus  =   1.50e8 # dyne/cm^2 = 15.0 MPa
+      poissons ratio  =   0.45   # cm/cm = unitless
+    end parameters for model elastic
+
+    begin parameters for model elastic_plastic  # note, parameters from test data at 20/s
+      youngs modulus     =   0.85e7    # dyne/cm^2 = 0.85 MPa
+      poissons ratio     =   0.1       # cm/cm = unitless
+      yield stress       =   0.048e7   # dyne/cm^2 = 0.048 MPa
+      beta               =   1.0       # unitless
+      hardening modulus  =   0.091e7   # dyne/cm^2 = 0.091 MPa
+    end parameters for model elastic_plastic
+
+    begin parameters for model viscoelastic_swanson
+      bulk modulus  =   2.371e10 # dyne/cm^2 = 2.371e9 Pa
+#     shear modulus =   3.400e5  # dyne/cm^2
+      A1            =   3.400e5  # dyne/cm^2
+      P1            =   0
+      B1            =   0
+      Q1            =   0
+      C1            =   0
+      R1            =   0
+      cut off strain        = 0.05
+      prony shear infinity  = 1.8824e-1  # Pa/Pa
+      prony shear 1         = 8.1176e-1  # Pa/Pa
+      prony shear 2         = 1.0e-4
+      prony shear 3         = 1.0e-4
+      prony shear 4         = 1.0e-4
+      prony shear 5         = 1.0e-4
+      prony shear 6         = 1.0e-4
+      prony shear 7         = 1.0e-4
+      prony shear 8         = 1.0e-4
+      prony shear 9         = 1.0e-4
+      prony shear 10        = 1.0e-4
+      # shear relax time 1    = 2.50e-2  # seconds, formerly 1.4286e-3 s
+      shear relax time 1    = 1.4286e-3
+      shear relax time 2    = 100
+      shear relax time 3    = 150
+      shear relax time 4    = 200
+      shear relax time 5    = 250
+      shear relax time 6    = 300
+      shear relax time 7    = 350
+      shear relax time 8    = 400
+      shear relax time 9    = 450
+      shear relax time 10   = 500
+      wlf coef c1           = 1.0
+      wlf coef c2           = 1.0
+      wlf tref              = 298
+      MAX POISSONS RATIO    = 0.49
+    end parameters for model viscoelastic_swanson
+
+    begin parameters for model orthotropic_crush
+      youngs modulus = 6.0e+06
+      poissons ratio = 0.00
+
+      ex = 6.000e+06
+      ey = 6.000e+06
+      ez = 6.000e+06
+      gxy = 3.00e+06
+      gyz = 3.00e+06
+      gzx = 3.00e+06
+
+      crush xx = crush_soft
+      crush yy = crush_soft
+      crush zz = crush_soft
+      crush xy = crush_soft
+      crush yz = crush_soft
+      crush zx = crush_soft
+
+      vmin = 0.7
+
+      yield stress = 1.00e+08
+
+    end parameters for model orthotropic_crush
+
+  end material helmetpadsoft
+

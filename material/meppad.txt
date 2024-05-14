@@ -1,0 +1,36 @@
+  # -------------------
+  begin material meppad
+  # -------------------
+      
+    # MEP pad, cf 
+    # Malave email 2018-11-20-1232
+    # Fawzi email 2018-10-31-1036
+    # Cadex created MEP from cast polyurethane called Triathane from
+    # Crosslink Technology Inc Hardness 60 Shore A (not MEP
+    # made from neoprene rubber), tensile modulus at 100% elongation 
+    # is 397 psi = 2.737e7 dyne/cm^2, assume same in tension and compression
+    # materials properties QC 2019-06-25 CBH with Materials for Casco document
+
+    # density = 1.030 # g/cc, should yield pad mass 467.65 g
+    density = 1.010 # g/cc, should yield pad mass 467.65 g
+                    # update to make sim mass match exp mass
+      
+    begin parameters for model elastic
+
+      # youngs modulus    =   2.4633e7 # dyne/cm^2 # s1 
+      # youngs modulus    =   2.737e7  # dyne/cm^2 # s0 s3 s4 
+      # youngs modulus    =   3.0107e7 # dyne/cm^2 # s2 s5
+      # youngs modulus    =   3.2844e7 # dyne/cm^2 # s6
+      # youngs modulus    =   3.5581e7 # dyne/cm^2 # s7
+      # youngs modulus    =   3.8318e7 # dyne/cm^2 # s8
+        youngs modulus    =   5.4740e7 # dyne/cm^2 # s9
+      # poissons ratio    =   0.36    # cm/cm     = unitless # s3
+      # poissons ratio    =   0.40    # cm/cm     = unitless # s0 s1 s2
+      # poissons ratio    =   0.44    # cm/cm     = unitless # s4 s5
+      # poissons ratio    =   0.48    # cm/cm     = unitless # s6
+        poissons ratio    =   0.49    # cm/cm     = unitless # s7 s8 s9
+
+    end parameters for model elastic
+
+  end material meppad
+

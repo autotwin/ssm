@@ -1,0 +1,17 @@
+  # ---------------------
+  begin material hemi
+  # ---------------------
+
+    # 304 SS per Sushant  
+
+    density = 8.00 # g/cc
+      
+    begin parameters for model elastic
+
+      youngs modulus    =  193.0e10  # dyne/cm^2 = 10e6 psi = 193.0 GPa
+      poissons ratio    =    0.29    # cm/cm     = unitless
+
+    end parameters for model elastic
+
+  end material hemi
+

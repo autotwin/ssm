@@ -1,0 +1,22 @@
+  # ----------------------
+  begin material magnesium
+  # ----------------------
+
+    # MEP pad, cf Malave email 2018-11-20-1232
+    # DOT mass = 3226.4 g
+    # travel arm assy (arm, mount, clamp) = 1773.6 g
+    # asm.matweb.com, magnesium alloys, general
+    # materials properties QC 2019-06-25 CBH with Materials for Casco document
+      
+    # density = 1.800 # g/cc 
+    density = 2.080 # g/cc, increase to make sim mass match exp mass
+      
+    begin parameters for model elastic
+
+      youngs modulus    =  4.050e11 # dyne/cm^2 = 4.50e10 Pa 
+      poissons ratio    =  0.35     # cm/cm     = unitless
+
+    end parameters for model elastic
+
+  end material magnesium
+

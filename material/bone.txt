@@ -1,0 +1,41 @@
+  # -----------------
+  begin material bone
+  # -----------------
+
+    # reference: Morse 2014, C. Franck Lacrosse paper
+    # bone: linear elastic, E = 6.5 GPa, nu = 0.45; rho = ?
+    # materials properties QC 2019-06-25 CBH with Materials for Casco document
+  
+    density = 1.210 # g/cc 
+
+    begin parameters for model elastic
+      youngs modulus  =   8.0e10  # dyne/cm^2 = 8.0 GPa
+      poissons ratio  =   0.22    # cm/cm     = unitless
+    end parameters for model elastic
+
+    begin parameters for model elastic_plastic
+      youngs modulus  =   8.0e10  # dyne/cm^2 = 8.0 GPa
+      poissons ratio  =   0.22    # cm/cm     = unitless
+      yield stress    =   6.40e8  # dyne/cm^2 = 64 MPa
+      beta            =   1.0     # 1.0 is isotropic hardening, 0.0 is kinematic
+      hardening modulus = 0.0     # dyne/cm^2 (perfect plasticity)
+    end parameters for model elastic_plastic
+
+    begin parameters for model johnson_cook
+      youngs modulus      =  8.0e10     # dyne/cm^2 = 8.0 GPa
+      poissons ratio      =  0.22       # cm/cm     = unitless
+      yield stress        =  9.5e8      # dyne/cm^2 = 95 MPa
+      hardening constant  =  0.0        # unitless
+      hardening exponent  =  0.0        # unitless
+      rate constant       =  0.0        # unitless
+      reference rate      =  0.0        # unitless
+      edot_ref            =  1.0        # unitless
+      d1                  =  0.008      # unitless
+      d2                  =  0.0        # unitless
+      d3                  =  0.0        # unitless
+      d4                  =  0.0        # unitless
+      d5                  =  0.0        # unitless
+    end parameters for model johnson_cook
+
+  end material bone
+

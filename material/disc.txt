@@ -1,0 +1,16 @@
+  # -----------------
+  begin material disc # see /cielo/sims/b1341_10.0 for rho, cs, possion, yield
+  # -----------------
+  
+    # materials properties QC 2019-06-25 CBH with Materials for Casco document
+
+    density = 1.000 # g/cc
+
+    begin parameters for model elastic
+      youngs modulus  =  4.27e8 # dyne/cm^2 = 42.7 MPa
+                                # Yang 2016, Fig 2, 30-yo at 20%/s strain rate
+      poissons ratio  =    0.40 # cm/cm = unitless
+    end parameters for model elastic
+
+  end material disc 
+
