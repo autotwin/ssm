@@ -8,8 +8,8 @@ begin sierra simulation_name
   # include files
   # -----------------
   
-  {include("../include/e_vm-functions.i")}
-  {include("../include/e_dot_vm-functions.i")}
+  {include("../../include/e_vm-functions.i")}
+  {include("../../include/e_dot_vm-functions.i")}
 
   # ---------------------------------------------------------------------------
   # direction vectors
@@ -111,11 +111,11 @@ begin sierra simulation_name
     end values
   end function ramp
 
-  {include("skull_rotate.txt")}
+  {include("../../bcs/skull_rotate.txt")}
 
-  {include("VelY.txt")}
+  {include("../../bcs/VelY.txt")}
 
-  {include("VelZ.txt")}
+  {include("../../bcs/VelZ.txt")}
 
   # ---------------------------------------------------------------------------
   # materials: listed in alphabetical order
@@ -728,7 +728,8 @@ begin sierra simulation_name
 
   begin finite element model crush
 
-      database name = /projects/sibl/data/bob-1mm-5kg-helmet-hemi/bob-1mm-5kg-helmet2-hemi.g
+    database name = ../../geometry/bob-1mm-5kg-helmet2-hemi.g
+    # database name = /projects/sibl/data/bob-1mm-5kg-helmet-hemi/bob-1mm-5kg-helmet2-hemi.g
     # database name = ../geometry/bob-1mm-5kg-helmet2-hemi.g
     # database name = ../../geometry/data/bob-1mm-5kg-helmet-hemi/bob-1mm-5kg-helmet2-hemi.g
     # database name = /projects/sibl/geometry/data/bob-1mm-5kg-helmet-hemi/bob-1mm-5kg-helmet2-hemi.g
@@ -938,13 +939,13 @@ begin sierra simulation_name
 
       end time stepping block phase_1
 
-      # termination time = 0.0001 # second
+        termination time = 0.0001 # second
       # termination time = 0.001 # second
       # termination time = 0.006 # second
       # termination time = 0.008 # second
       # termination time = 0.010 # second
       # termination time = 0.012 # second
-        termination time = 0.025 # second
+      # termination time = 0.025 # second
       # termination time = 0.035 # second
       # termination time = 0.040 # second
       # termination time = 0.100 # second
@@ -1091,8 +1092,8 @@ begin sierra simulation_name
 
       # -------------------------------
 
-      {include("../include/e_vm-variables.i")}
-      {include("../include/e_dot_vm-variables.i")}
+      {include("../../include/e_vm-variables.i")}
+      {include("../../include/e_dot_vm-variables.i")}
 
       # -------------------------------
 
@@ -1102,7 +1103,7 @@ begin sierra simulation_name
         death on inversion = on
         death on ill defined contact = on
         death steps = 5
-        force valid acme connectivity
+        # force valid acme connectivity  # 2024-05-13 causes error, why?
       end element death dead_ele
       # -------------------------------
 

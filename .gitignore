@@ -1,3 +1,11 @@
+# Genesis/Exodus intermediate files
+*.g.*
+*.e.*
+*.err
+*.log
+*.out
+g.rsout.*
+
 # ignore .vscode folder
 .vscode
 

@@ -5,20 +5,22 @@ module load sierra
 module load seacas
 
 # previously ran with 16 processors
-# PROCS=16
+PROCS=16
 # 10 nodes = 160 processors
 # PROCS=160
 # PROCS=320
-PROCS=336
+# PROCS=336
 
 # geometry and mesh file
 # GFILE="../geometry/bob-1mm-5kg-helmet2-hemi.g"
-GFILE="/projects/sibl/data/bob-1mm-5kg-helmet-hemi/bob-1mm-5kg-helmet2-hemi.g"
+# GFILE="/projects/sibl/data/bob-1mm-5kg-helmet-hemi/bob-1mm-5kg-helmet2-hemi.g"
+# GFILE="/projects/sibl/data/bob-1mm-5kg-helmet-hemi/bob-1mm-5kg-helmet2-hemi.g"
+GFILE="../../geometry/bob-1mm-5kg-helmet2-hemi.g"
 
 # sierra solid mechanics input file
 IFILE="bob-1mm-5kg-helmet2-0305-hemi-066b.i"
 
-decomp --processors $PROCS $GFILE
+# decomp --processors $PROCS $GFILE
 
 # short can be used for nodes <= 40 and wall time <= 4:00:00 (4 hours)
 
@@ -35,3 +37,4 @@ sierra -T 0:20:00 --queue-name batch,short --account FY180042 -j $PROCS --job-na
 #sierra -T 1:00:00 --account FY139077 -j 40 --job-name versa_void --post adagio -i 4inch_sce.i
 #sierra presto_itar -i 3inchOD_Ogive_32lb_Perforation.i --PROJTASK=FY128666 -j 8 --jobName=presto --pre --run --post -T 8:00:00 
 #sierra presto -i 3inchOD_Ogive_32lb_Perforation.i -j 8 --pre --run --post --T=4:00:00 
+
