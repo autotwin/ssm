@@ -1,0 +1,17 @@
+#!/bin/bash
+
+echo "module purge"
+module purge
+
+echo "module load sierra"
+module load sierra
+
+# IFILE="bob-1mm-5kg-helmet2-0305-hemi-066b.i"
+IFILE="bob067.i"
+
+echo "Check syntax of input deck: $IFILE"
+adagio --check-syntax -i $IFILE  # to check syntax of input deck
+
+# echo "Check syntax of input deck ($IFILE) and mesh loading"
+# adagio --check-input  -i $IFILE  # to check syntax of input deck and mesh load 
+
