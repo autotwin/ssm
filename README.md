@@ -23,7 +23,7 @@ Figure 1: Reproduction of boundary condition and mesh figures.
 
 ### Simulation Characteristics
 
-Table 1: Simulation index, *Military Medicine* either Bob mesh and boundary condition of 10x3=10 ms and 3 krad, 8x8=8 ms and 8 krad angular acceleration pulse.
+Table 1: Simulation index. 
 
 item | `sim` | mesh | bc (ms, krad/s) | T_sim (ms) | machine | # proc | cpu time (hh:mm) | wall time (days)
 :---: | :---: | :---: | :---: | ---: | :---: | ---: | ---: | ---: 
