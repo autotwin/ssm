@@ -28,14 +28,14 @@ Table 1: Simulation index, *Military Medicine* either Bob mesh and boundary cond
 item | `sim` | mesh | bc (ms, krad/s) | T_sim (ms) | machine | # proc | cpu time (hh:mm) | wall time (days)
 :---: | :---: | :---: | :---: | ---: | :---: | ---: | ---: | ---: 
 0 | [`vox_0.1cm`](https://github.com/autotwin/basis?tab=readme-ov-file#voxel-meshes) | spheres | 8, 8 | 20 | skybridge | 160 | 01:43 | 11.5
-1 | `bob066b` | Bob | 10, 3 | 6.57 | eclipse | 336 | 04:00 | 56
+1 | `bob066b` | Bob | 10, 3 | 6.57 | eclipse | 336 | 04:00 | 56.0
 2 | `bob067` | Bob | 10, 3 | 10 | eclipse | 336 | 02:35 | 36.2
 3 | [`sci001`](https://github.com/autotwin/mesh/tree/main/doc/T1_Utah_SCI_brain) | T1 Utah SCI | 10, 3 | 5 | 6 | 7 | 8 | 9
 4 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9
 
 ![](figs/simulaton_time_to_completion.png)
 
-Figure 2: Analysis of time to completion for simulations. Reference: `autotwin/ssm/analysis/simulaton_time_to_completion.xlsx` 
+Figure 2: Analysis of time to completion for simulations. </br>Reference: `autotwin/ssm/analysis/simulaton_time_to_completion.xlsx` 
 
 ## References
 
