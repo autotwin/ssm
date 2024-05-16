@@ -30,8 +30,10 @@ item | `sim` | mesh | bc (ms, krad/s) | T_sim (ms) | machine | # proc | cpu time
 0 | [`vox_0.1cm`](https://github.com/autotwin/basis?tab=readme-ov-file#voxel-meshes) | spheres | 8, 8 | 20 | skybridge | 160 | 01:43 | 11.5
 1 | `bob066b` | Bob | 10, 3 | 6.57 | eclipse | 336 | 04:00 | 56.0
 2 | `bob067` | Bob | 10, 3 | 10 | eclipse | 336 | 02:35 | 36.2
-3 | [`sci001`](https://github.com/autotwin/mesh/tree/main/doc/T1_Utah_SCI_brain) | T1 Utah SCI | 10, 3 | 5 | 6 | 7 | 8 | 9
-4 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9
+3 | `bob068` | Bob | 10, 3 | 20 | eclipse | 336 | hh:mm | hh:mm
+4 | `bob069` | Bob | 10, 3 | 20 | eclipse | 700 | hh:mm | hh:mm
+x | [`sci001`](https://github.com/autotwin/mesh/tree/main/doc/T1_Utah_SCI_brain) | T1 Utah SCI | 10, 3 | 5 | 6 | 7 | 8 | 9
+x | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9
 
 ![](figs/simulaton_time_to_completion.png)
 
@@ -53,3 +55,26 @@ Linear Acceleration | Rotational Acceleration | Rotational Velocity
 ![](figs/Terpsma_2020_Figure_4-9.png) | ![](figs/Terpsma_2020_Figure_4-10.png) | ![](figs/Terpsma_2020_Figure_4-11.png)
 
 > *Figure #*  `Bob-066b` - Terpsma 2020 SAND, at page 22, Table 3-1, helmeted Bob onto inclined anvil is simulation reference `Bob-066b`.  Boundary condition: experimental angular velocity time history (Figure 4-11), which is a time integration of the angular acceleration time history (Figure 4-10), around `X` axis ("yes" gesture head rotation).
+
+## Queue Reference
+
+```bash
+mywcid
+sinfo
+squeue -u chovey
+squeue -u chovey --start
+```
+
+## SSM Questions
+
+* Why does this no longer work:
+
+```bash
+echo "Check syntax of input deck: $IFILE"
+adagio --check-syntax -i $IFILE  # to check syntax of input deck
+
+# echo "Check syntax of input deck ($IFILE) and mesh loading"
+adagio --check-input  -i $IFILE  # to check syntax of input deck and mesh load
+```
+
+* How do determine the number of equations being solved, not just the number of elements?
