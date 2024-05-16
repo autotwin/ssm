@@ -38,7 +38,7 @@ Figure 2: Analysis of time to completion for simulations. </br>Reference: `autot
 item | `sim` | mesh | bc (ms, krad/s) | T_sim (ms) | machine | # proc | cpu time (hh:mm) | wall time (days)
 :---: | :---: | :---: | :---: | ---: | :---: | ---: | ---: | ---: 
 3 | `bob068` | Bob | 10, 3 | 20 | eclipse | 336 | hh:mm | hh:mm
-4 | `bob069` | Bob | 10, 3 | 20 | eclipse | 700 | hh:mm | hh:mm
+4 | `bob069` | Bob | 10, 3 | 20 | eclipse | 700 | 04:00 | 2,800
 x | [`sci001`](https://github.com/autotwin/mesh/tree/main/doc/T1_Utah_SCI_brain) | T1 Utah SCI | 10, 3 | 5 | 6 | 7 | 8 | 9
 x | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9
 
