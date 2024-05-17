@@ -56,7 +56,7 @@ integer | anatomy | color
 
 > Table 3: Pixel semantic values, anatomy, and color.
 
-size | (x, y, z)
+size | dimension
 --- | ---
 Large | (256, 256, 150)
 Medium | (128, 128, 75)
