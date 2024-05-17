@@ -13,7 +13,7 @@ Boundary Condition | Mesh
 ![](figs/Terpsma_2020_Figure_4-10.png) | ![](figs/Terpsma_2020_Figure_C-4.png)
 ![](figs/AngAccel.png)| ![](figs/autotwin_bi_material_voxels.png)
 
-Figure 1: Reproduction of boundary condition and mesh figures.
+> Figure 1: Reproduction of boundary condition and mesh figures.
 
 ### Mesh Characteristics
 
@@ -23,7 +23,7 @@ Figure 1: Reproduction of boundary condition and mesh figures.
 
 ### Simulation Characteristics
 
-Table 1: Simulation index. 
+> Table 1: Simulation index. 
 
 item | `sim` | mesh | bc (ms, krad/s) | T_sim (ms) | machine | # proc | cpu time (hh:mm) | wall time (days)
 :---: | :---: | :---: | :---: | ---: | :---: | ---: | ---: | ---: 
@@ -33,7 +33,7 @@ item | `sim` | mesh | bc (ms, krad/s) | T_sim (ms) | machine | # proc | cpu time
 
 ![](figs/simulaton_time_to_completion.png)
 
-Figure 2: Analysis of time to completion for simulations. </br>Reference: `autotwin/ssm/analysis/simulaton_time_to_completion.xlsx` 
+> Figure 2: Analysis of time to completion for simulations. </br>Reference: `autotwin/ssm/analysis/simulaton_time_to_completion.xlsx` 
 
 item | `sim` | mesh | bc (ms, krad/s) | T_sim (ms) | machine | # proc | cpu time (hh:mm) | wall time (days)
 :---: | :---: | :---: | :---: | ---: | :---: | ---: | ---: | ---: 
@@ -43,6 +43,29 @@ item | `sim` | mesh | bc (ms, krad/s) | T_sim (ms) | machine | # proc | cpu time
 
 ![](figs/simulaton_time_to_completion_002.png)
 
+### Pixel toward Ensemble
+
+> Table 2: Pixel semantic values, anatomy, and color.
+
+integer | anatomy | color
+:---: | --- | ---
+0 | void | dark blue
+1 | skull | light blue
+2 | CSF | green
+3 | brain | yellow
+
+> Table 3: Pixel semantic values, anatomy, and color.
+
+size | (x, y, z)
+--- | ---
+Large | (256, 256, 150)
+Medium | (128, 128, 75)
+Small | (64, 64, 38)
+Mini | (26, 26, 15)
+
+![](figs/IXI013-HH-1212-T1_visualize.png)
+
+> Figure 3: Sagittal section view of four sizes.
 
 ## References
 
@@ -59,7 +82,7 @@ Linear Acceleration | Rotational Acceleration | Rotational Velocity
 :--: | :--: | :--:
 ![](figs/Terpsma_2020_Figure_4-9.png) | ![](figs/Terpsma_2020_Figure_4-10.png) | ![](figs/Terpsma_2020_Figure_4-11.png)
 
-> *Figure #*  `Bob-066b` - Terpsma 2020 SAND, at page 22, Table 3-1, helmeted Bob onto inclined anvil is simulation reference `Bob-066b`.  Boundary condition: experimental angular velocity time history (Figure 4-11), which is a time integration of the angular acceleration time history (Figure 4-10), around `X` axis ("yes" gesture head rotation).
+> Figure 4  `Bob-066b` - Terpsma 2020 SAND, at page 22, Table 3-1, helmeted Bob onto inclined anvil is simulation reference `Bob-066b`.  Boundary condition: experimental angular velocity time history (Figure 4-11), which is a time integration of the angular acceleration time history (Figure 4-10), around `X` axis ("yes" gesture head rotation).
 
 ## Queue Reference
 
