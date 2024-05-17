@@ -79,6 +79,9 @@ squeue -u chovey --start
 export PSM2_DEVICES='shm,self'
 # then
 
+# DRY code
+IFILE="bob069.i"
+
 echo "Check syntax of input deck: $IFILE"
 adagio --check-syntax -i $IFILE  # to check syntax of input deck
 
