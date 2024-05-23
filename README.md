@@ -65,7 +65,7 @@ Mini | (26, 26, 15)
 
 ![](figs/IXI013-HH-1212-T1_visualize.png)
 
-> Figure 3: Sagittal section view of four sizes.
+> Figure 3: Sagittal section view of four sizes.  [Link to file download](https://drive.google.com/drive/folders/158MXz03QCuockuRoSBpY-YuO4fni3RVD).
 
 ## References
 
