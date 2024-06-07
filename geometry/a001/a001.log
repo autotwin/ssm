@@ -1,0 +1,119 @@
+SCULPT Running on host name: s1088757
+At time: Fri Jun  7 13:07:01 2024
+
+Initializing MPI on 1 Processors: mpiexec = /Applications/Cubit-16.14/Cubit.app/Contents/MacOS/mpiexec
+
+
+/Applications/Cubit-16.14/Cubit.app/Contents/MacOS/mpiexec --mca oob_tcp_if_include lo0 --mca btl ^tcp -n 1 /Applications/Cubit-16.14/Cubit.app/Contents/MacOS/psculpt -i a001.i
+
+Reading input file a001.i...
+Finished reading input file...
+
+                 SANDIA NATIONAL LABORATORIES
+
+     SSSSS     CCCCC    UU   UU   LL        PPPPPP    TTTTTT
+    SS   SS   CC   CC   UU   UU   LL        PP   PP     TT
+    SS        CC        UU   UU   LL        PP   PP     TT
+     SSSSS    CC        UU   UU   LL        PPPPPP      TT
+         SS   CC        UU   UU   LL        PP          TT
+    SS   SS   CC   CC   UU   UU   LL        PP          TT
+     SSSSS     CCCCC     UUUUU    LLLLLLL   PP          TT
+
+                     PARALLEL HEX MESHING
+                            FROM
+                     VOLUME FRACTION DATA
+
+              SCULPT Version 16.14.7 Build bf6ed33e6b
+              Copyright 2015 Sandia Corporation
+      Revised Fri Dec 15 08:36:16 2023 -0700
+      User Support and Bug Reports: cubit-help@sandia.gov
+  
+     SCULPT includes CAMAL by Sandia National Laboratories
+  SCULPT includes CTH Diatoms by Sandia National Laboratories
+  SCULPT is a companion application to the CUBIT Geometry and 
+       Meshing Toolkit by Sandia National Laboratories
+
+Input: /Applications/Cubit-16.14/Cubit.app/Contents/MacOS/psculpt
+  --input_file      -i    a001.i                                               
+  --input_spn       -isp  /Users/chovey/scratch/ixi/IXI012-HH-1211-T1_large.spn
+  --spn_xyz_order   -spo  0                                                    
+  --exodus_file     -e    a001                                                 
+  --nelx            -x    151                                                  
+  --nely            -y    185                                                  
+  --nelz            -z    155                                                  
+  --stair           -str  ON (1)                                               
+  --gen_sidesets    -SS   2                                                    
+  --smooth          -S    3                                                    
+  --csmooth         -CS   2                                                    
+  --laplacian_iters -LI   10                                                   
+  --xtranslate      -xtr  0.000000                                             
+  --ytranslate      -ytr  0.000000                                             
+  --ztranslate      -ztr  0.000000                                             
+  --xscale          -xsc  0.100000                                             
+  --yscale          -ysc  0.100000                                             
+  --zscale          -zsc  0.100000                                             
+
+Decomposing Cartesian grid for parallel...
+  Rank 0 Number of cells/segment in directions X 	 151
+  Rank 0 Number of cells/segment in directions Y 	 185
+  Rank 0 Number of cells/segment in directions Z 	 155
+  Global Number of grid segments in directions X 	 1
+  Global Number of grid segments in directions Y 	 1
+  Global Number of grid segments in directions Z 	 1
+
+Summary of imported Microstructures spn file grid parameters
+  Name of spn file  = /Users/chovey/scratch/ixi/IXI012-HH-1211-T1_large.spn
+  Num. Cartesian grid intervals = 151  185  155
+  Cartesian Grid Bounds (Min.)  = 0.000000  0.000000  0.000000
+  Cartesian Grid Bounds (Max.)  = 151.000000  185.000000  155.000000
+  Expanded initial Cartesian grid by 0 layers
+  Number of Materials           = 4
+
+Total Cells                = 4329925
+Number of Processors       = 1
+Approx. Num Cells per Proc = 4329925
+
+begin SCULPT meshing...
+(1/9) computing normals...
+(2/9) classifying materials...
+(3/9) resolving non-manifolds...
+(4/9) computing dual edge intersections...
+(5/9) computing material interfaces...
+(6/9) generating geometry...
+(7/9) generating buffer hexes...
+(8/9) generating interior hexes...
+(9/9) begin smoothing...
+building exodus mesh...
+generating global ids...
+building sidesets...
+================ MESH SUMMARY ===================
+Base Filename	a001
+Num Procs	1
+Num Nodes	4410432
+Num Elements	4329925
+Num Blocks	4
+Num Nodesets	0
+Num Sidesets	15
+Num Bad Qual	0
+Num Poor Qual	0
+Min Quality	1.000000
+Avg Quality	1.000000
+Min Edge Len	0.100000
+Min Qual Rank	0
+
+Job Completed Fri Jun  7 13:09:12 2024
+
+Elapsed Time		130.211208 sec. (2.170187 min.)
+Total Time on 1 Procs	130.211208 sec. (2.170187 min.)
+Slow Rank		0
+Done!
+--------------------
+autotwin/mesh module
+--------------------
+
+atmesh> This is /Users/chovey/autotwin/mesh/src/atmesh/npy_to_mesh.py
+atmesh> Processing file: a001.yml
+atmesh> Success: database created from file: a001.yml
+{'sculpt_binary': '/Applications/Cubit-16.14/Cubit.app/Contents/MacOS/sculpt', 'npy_input': '~/scratch/ixi/IXI012-HH-1211-T1_large.npy', 'scale_x': 0.1, 'scale_y': 0.1, 'scale_z': 0.1, 'translate_x': 0.0, 'translate_y': 0.0, 'translate_z': 0.0, 'spn_xyz_order': 0, 'yml_schema_version': 1.8}
+atmesh> Saved spn file: /Users/chovey/scratch/ixi/IXI012-HH-1211-T1_large.spn
+atmesh> Saved Sculpt input .i file: a001.i
