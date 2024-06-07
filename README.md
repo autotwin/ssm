@@ -1,3 +1,36 @@
+<style>
+    .bone {
+      background-color: #F5DEB3;
+    }
+    .disc {
+      background-color: #FFA500;
+    }
+    .vasculature {
+      background-color: #FF0000;
+    }
+    .airway_sinus {
+      background-color: #556B2F;
+    }
+    .membrane {
+      background-color: #FFD700;
+    }
+    .csf {
+      background-color: #00FFFF;
+    }
+    .white_matter {
+      background-color: #BEBEBE;
+    }
+    .gray_matter {
+      background-color: #696969;
+    }
+    .muscle {
+      background-color: #CD5C5C;
+    }
+    .skin {
+      background-color: #D2B48C;
+    }
+</style>
+
 # ssm
 
 Sierra Solid Mechanics simulations
@@ -37,7 +70,7 @@ npy_to_mesh a001.yml > a001.log
 Boundary Condition | Mesh
 :---: | :---:
 ![](figs/Terpsma_2020_Figure_4-10.png) | ![](figs/Terpsma_2020_Figure_C-4.png) ![](geometry/bob/bob.png) ![](geometry/bob/bob_iso.png)
-![](figs/AngAccel.png)| ![](geometry/a001/a001.png)
+![](figs/AngAccel.png)| ![](geometry/a001/a001.png) ![](geometry/a001/a001_iso.png) ![](geometry/a001/a001_iso_alt.png)
 
 > Figure 1: Reproduction of boundary condition and mesh figures.
 
@@ -71,7 +104,7 @@ view iso
 view up 0 0 1 # z-axis up
 view from 1000 -1000 1000
 
-# graphics clip on location 15.5/2 18.5/2 15.1/2 direction -1 0 0 # center point of the domain in a001.log
+# graphics clip on location 15.5/2 18.5/2 15.5/2 direction -1 0 0 # center point of the domain in a001.log
 graphics clip on location 7.55 9.25 7.75 direction -1 0 0 # center point of the domain in a001.log
 graphics clip manipulation off
 ```
@@ -144,6 +177,22 @@ Linear Acceleration | Rotational Acceleration | Rotational Velocity
 ![](figs/Terpsma_2020_Figure_4-9.png) | ![](figs/Terpsma_2020_Figure_4-10.png) | ![](figs/Terpsma_2020_Figure_4-11.png)
 
 > Figure 4  `Bob-066b` - Terpsma 2020 SAND, at page 22, Table 3-1, helmeted Bob onto inclined anvil is simulation reference `Bob-066b`.  Boundary condition: experimental angular velocity time history (Figure 4-11), which is a time integration of the angular acceleration time history (Figure 4-10), around `X` axis ("yes" gesture head rotation).
+
+## Color Codes
+
+| R     | G     | B     | R   | G   | B   | Block | Hex    |
+| ----- | ----- | ----- | --- | --- | --- | :---: | ------ |
+| 0.961 | 0.871 | 0.702 | 245 | 222 | 179 | <div class="bone">1</div>     | F5DEB3 |
+| 1     | 0.647 | 0     | 255 | 165 | 0   | <div class="disc">2</div>     | FFA500 |
+| 1     | 0     | 0     | 255 | 0   | 0   | <div class="vasculature">3</div>     | FF0000 |
+| 0.333 | 0.42  | 0.184 | 85  | 107 | 47  | <div class="airway_sinus">4</div>     | 556B2F |
+| 1     | 0.843 | 0     | 255 | 215 | 0   | <div class="membrane">5</div>     | FFD700 |
+| 0     | 1     | 1     | 0   | 255 | 255 | <div class="csf">6</div>     | 00FFFF |
+| 0.745 | 0.745 | 0.745 | 190 | 190 | 190 | <div class="white_matter">7</div>     | BEBEBE |
+| 0.412 | 0.412 | 0.412 | 105 | 105 | 105 | <div class="gray_matter">8</div>     | 696969 |
+| 0.804 | 0.361 | 0.361 | 205 | 92  | 92  | <div class="muscle">9</div>     | CD5C5C |
+| 0.824 | 0.706 | 0.549 | 210 | 180 | 140 | <div class="skin">10</div>    | D2B48C |
+
 
 ## Queue Reference
 
