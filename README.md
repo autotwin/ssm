@@ -62,7 +62,7 @@ help clip
 graphics clip on location 33.6315 0 0 direction -1 0 0
 graphics clip manipulation off
 
-# example with at001
+# example with a001
 Cubit>
 import mesh "/Users/chovey/autotwin/ssm/geometry/a001/a001.e.1.0" lite
 # block 4 visibility off # gui command
