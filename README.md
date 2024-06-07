@@ -136,7 +136,6 @@ Linear Acceleration | Rotational Acceleration | Rotational Velocity
 | 0.804 | 0.361 | 0.361 | 205 | 92  | 92  | <div class="muscle">9</div>     | CD5C5C |
 | 0.824 | 0.706 | 0.549 | 210 | 180 | 140 | <div class="skin">10</div>    | D2B48C |
 
-
 ## Queue Reference
 
 ```bash
