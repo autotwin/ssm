@@ -80,7 +80,7 @@ graphics clip manipulation off
 
 * The spheres mesh is 5,496,376 elements, 400 MB.
 * The *Mil Med* mesh has 4,631,316 elements, 328 MB.
-* The Utah SCI has 4,329,925 elements (2,389,783 void block 0, 240,895 bone block 1, 448,654 csf block 2, 1,250,593 brain block 3), 220 MB (see [table](https://github.com/autotwin/mesh/blob/main/doc/npy_to_mesh_part_3.md)).
+* The a001 (IXI012-HH-1211-T1_large.npy -> a001.e.1.0) has 4,329,925 elements (2,389,783 void block 0, 240,895 bone block 1, 448,654 csf block 2, 1,250,593 brain block 3), 220 MB (see [table](https://github.com/autotwin/mesh/blob/main/doc/npy_to_mesh_part_3.md)).
 
 ### Simulation Characteristics
 

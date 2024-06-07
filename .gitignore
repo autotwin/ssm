@@ -2,7 +2,7 @@
 *.g.*
 *.e.*
 *.err
-*.log
+# *.log  # reinstate .log files with npy_to_mesh workflow
 *.out
 g.rsout.*
 
