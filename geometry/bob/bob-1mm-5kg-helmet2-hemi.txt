@@ -1,3 +1,8 @@
+Current:
+The input mesh, bob-1mm-5kg-helmet2-hemi.g, is copied to the repo using git-lfs, 
+Git's large file storage.  See https://git-lfs.com for more details.
+
+Previous:
 The input mesh, bob-1mm-5kg-helmet2-hemi.g, is not contained in the repository.
 The bob-1mm-5kg-helmet2-hemi.g file must be copied to the repository manually
 from [to come].
