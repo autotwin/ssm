@@ -201,7 +201,7 @@ The two-material model from the `pixel` repo is now deprecated
 ![](figs/autotwin_bi_material_voxels.png)
 in favor of the three-material model from the `ensemble` repo.
 
-
+## html style block
 
 <style>
     .bone {
