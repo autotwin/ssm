@@ -1,35 +1,4 @@
-<style>
-    .bone {
-      background-color: #F5DEB3;
-    }
-    .disc {
-      background-color: #FFA500;
-    }
-    .vasculature {
-      background-color: #FF0000;
-    }
-    .airway_sinus {
-      background-color: #556B2F;
-    }
-    .membrane {
-      background-color: #FFD700;
-    }
-    .csf {
-      background-color: #00FFFF;
-    }
-    .white_matter {
-      background-color: #BEBEBE;
-    }
-    .gray_matter {
-      background-color: #696969;
-    }
-    .muscle {
-      background-color: #CD5C5C;
-    }
-    .skin {
-      background-color: #D2B48C;
-    }
-</style>
+
 
 # ssm
 
@@ -231,3 +200,38 @@ adagio --check-input  -i $IFILE  # to check syntax of input deck and mesh load
 The two-material model from the `pixel` repo is now deprecated
 ![](figs/autotwin_bi_material_voxels.png)
 in favor of the three-material model from the `ensemble` repo.
+
+
+
+<style>
+    .bone {
+      background-color: #F5DEB3;
+    }
+    .disc {
+      background-color: #FFA500;
+    }
+    .vasculature {
+      background-color: #FF0000;
+    }
+    .airway_sinus {
+      background-color: #556B2F;
+    }
+    .membrane {
+      background-color: #FFD700;
+    }
+    .csf {
+      background-color: #00FFFF;
+    }
+    .white_matter {
+      background-color: #BEBEBE;
+    }
+    .gray_matter {
+      background-color: #696969;
+    }
+    .muscle {
+      background-color: #CD5C5C;
+    }
+    .skin {
+      background-color: #D2B48C;
+    }
+</style>
