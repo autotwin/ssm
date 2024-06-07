@@ -106,30 +106,6 @@ item | `sim` | mesh | bc (ms, krad/s) | T_sim (ms) | machine | # proc | cpu time
 
 ![](figs/simulaton_time_to_completion_002.png)
 
-### Pixel toward Ensemble
-
-> Table 2: Pixel semantic values, anatomy, and color.
-
-integer | anatomy | color
-:---: | --- | ---
-0 | void | dark blue
-1 | skull | light blue
-2 | CSF | green
-3 | brain | yellow
-
-> Table 3: Pixel semantic values, anatomy, and color.
-
-size | dimension
---- | ---
-Large | (256, 256, 150)
-Medium | (128, 128, 75)
-Small | (64, 64, 38)
-Mini | (26, 26, 15)
-
-![](figs/IXI013-HH-1212-T1_visualize.png)
-
-> Figure 3: Sagittal section view of four sizes.  [Link to file download](https://drive.google.com/drive/folders/158MXz03QCuockuRoSBpY-YuO4fni3RVD).
-
 ## References
 
 * [casco_sim repo](https://cee-gitlab.sandia.gov/chovey/casco_sim)
@@ -192,8 +168,6 @@ adagio --check-input  -i $IFILE  # to check syntax of input deck and mesh load
 ```
 
 * How do determine the number of equations being solved, not just the number of elements?
-
-
 
 ## Appendix
 
