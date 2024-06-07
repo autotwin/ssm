@@ -1,0 +1,15 @@
+sculpt_binary: /Applications/Cubit-16.14/Cubit.app/Contents/MacOS/sculpt # Path
+# npy_input: ~/autotwin/mesh/tests/files/IXI012-HH-1211-T1_tiny_test.npy # Path
+npy_input: ~/scratch/ixi/IXI012-HH-1211-T1_large.npy # Path
+# scale_x: 1.0 # float
+# scale_y: 1.0
+# scale_z: 1.0
+scale_x: 0.1 # float, change from 1-mm side length to 0.1-cm side length units
+scale_y: 0.1
+scale_z: 0.1
+translate_x: 0.0 # float
+translate_y: 0.0
+translate_z: 0.0
+# spn_xyz_order: 5 # int
+spn_xyz_order: 0 # int
+yml_schema_version: 1.8 # float
