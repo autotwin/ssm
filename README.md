@@ -36,7 +36,7 @@ npy_to_mesh a001.yml > a001.log
 
 Boundary Condition | Mesh
 :---: | :---:
-![](figs/Terpsma_2020_Figure_4-10.png) | ![](figs/Terpsma_2020_Figure_C-4.png) ![](geometry/bob/bob.png)
+![](figs/Terpsma_2020_Figure_4-10.png) | ![](figs/Terpsma_2020_Figure_C-4.png) ![](geometry/bob/bob.png) ![](geometry/bob/bob_iso.png)
 ![](figs/AngAccel.png)| ![](geometry/a001/a001.png)
 
 > Figure 1: Reproduction of boundary condition and mesh figures.
@@ -57,7 +57,9 @@ help clip
   Graphics Clip Manipulation {on|off}
 
 # graphics clip on location (42.3 - 24.8)/2 + 24.8 (32.1 - 8.8)/2 + 8.0 (23.9 - 4.0)/2 + 4.0 direction -1 0 0
-graphics clip on location 33.55 20.45 13.95 direction -1 0 0
+# graphics clip on location 33.55 20.45 13.95 direction -1 0 0
+# reference page 73 of Terpsma 2020 SAND report for x-axis cut plane
+graphics clip on location 33.6315 0 0 direction -1 0 0
 graphics clip manipulation off
 
 # example with at001
