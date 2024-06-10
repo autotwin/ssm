@@ -107,6 +107,26 @@ item | `sim` | mesh | bc (ms, krad/s) | T_sim (ms) | machine | # proc | cpu time
 :---: | :---: | :---: | :---: | ---: | :---: | ---: | ---: | ---: 
 5 | `a001` |  | 10, 3 | 20 | eclipse | 336 | - | -
 
+```bash
+ssh eclipse
+
+cd ~/autotwin/ssm/geometry/a001
+# use `submit_script` to decompose the geometry for 336 processors
+
+cd ~/autotwin/ssm/input/a001
+# edit a001.i
+
+# check the ssm input file
+module purge
+module load sierra
+export PSM2_DEVICES='shm,self'
+IFILE="a001.i"
+adagio --check-syntax -i $IFILE
+adagio --check-input  -i $IFILE
+
+./submit_script
+```
+
 ## References
 
 * [casco_sim repo](https://cee-gitlab.sandia.gov/chovey/casco_sim)
