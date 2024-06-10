@@ -100,9 +100,12 @@ item | `sim` | mesh | bc (ms, krad/s) | T_sim (ms) | machine | # proc | cpu time
 :---: | :---: | :---: | :---: | ---: | :---: | ---: | ---: | ---: 
 3 | `bob068` | Bob | 10, 3 | 20 | eclipse | 336 | 05:57 | 83
 4 | `bob069` | Bob | 10, 3 | 20 | eclipse | 700 | 04:00 | 117
-5 | `a001` |  | 10, 3 | 20 | eclipse | 336 | - | -
 
 ![](figs/simulaton_time_to_completion_002.png)
+
+item | `sim` | mesh | bc (ms, krad/s) | T_sim (ms) | machine | # proc | cpu time (hh:mm) | wall time (days)
+:---: | :---: | :---: | :---: | ---: | :---: | ---: | ---: | ---: 
+5 | `a001` |  | 10, 3 | 20 | eclipse | 336 | - | -
 
 ## References
 
