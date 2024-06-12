@@ -33,7 +33,9 @@ IFILE="bob067.i"
 # long, wall time <= 96 h, eclipse 256 nodes
 
 # https://wiki.sandia.gov/display/OK/Slurm+Documentation
-sierra -T 04:00:00 --queue-name batch,short --account FY180042 -j $PROCS --job-name $IFILE --run --post adagio -i $IFILE
+sierra -T 04:00:00 --queue-name batch,short --account FY180042 -j $PROCS --job-name $IFILE --run adagio -i $IFILE
+# --post tells sierra to recombine all the exodus files
+# sierra -T 04:00:00 --queue-name batch,short --account FY180042 -j $PROCS --job-name $IFILE --run --post adagio -i $IFILE
 # sierra -T 4:30:00 --queue-name batch,short --account FY180042 -j $PROCS --job-name $IFILE --run --post adagio $IFILE
 # sierra -T 4:00:00 --queue-name batch,short --account FY180042 -j $PROCS --job-name vox_0.1cm_p --run --post adagio -i smooth_0.1cm.i
 # sierra --queue-name batch --account FY180042 -j 16 --job-name vox_0.1cm_p --pre --run --post adagio -i vox_0.1cm.i 

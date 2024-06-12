@@ -18,12 +18,16 @@ PROCS=336
 # GFILE="../geometry/bob-1mm-5kg-helmet2-hemi.g"
 # GFILE="/projects/sibl/data/bob-1mm-5kg-helmet-hemi/bob-1mm-5kg-helmet2-hemi.g"
 # GFILE="/projects/sibl/data/bob-1mm-5kg-helmet-hemi/bob-1mm-5kg-helmet2-hemi.g"
-GFILE="../../geometry/bob-1mm-5kg-helmet2-hemi.g"
+# GFILE="../../geometry/bob-1mm-5kg-helmet2-hemi.g"
+GFILE="../../geometry/a001/a001.e"
 
 # decomp --processors $PROCS $GFILE
 
 # sierra solid mechanics input file
-IFILE="bob-1mm-5kg-helmet2-0305-hemi-066b.i"
+# IFILE="bob-1mm-5kg-helmet2-0305-hemi-066b.i"
+# IFILE="bob067.i"
+# IFILE="bob068.i"
+IFILE="a001.i"
 
 # queues
 # https://wiki.sandia.gov/pages/viewpage.action?pageId=1359570410#SlurmDocumentation-Queues
@@ -32,7 +36,16 @@ IFILE="bob-1mm-5kg-helmet2-0305-hemi-066b.i"
 # long, wall time <= 96 h, eclipse 256 nodes
 
 # https://wiki.sandia.gov/display/OK/Slurm+Documentation
+# over 4 hours, then need to remove 'short' from the --queue-name
+#
+# sierra -T 00:20:00 --queue-name batch,short --account FY180042 -j $PROCS --job-name $IFILE --run adagio -i $IFILE
 sierra -T 04:00:00 --queue-name batch,short --account FY180042 -j $PROCS --job-name $IFILE --run adagio -i $IFILE
+# sierra -T 06:00:00 --queue-name batch --account FY180042 -j $PROCS --job-name $IFILE --run adagio -i $IFILE
+# sierra -T 24:00:00 --queue-name batch --account FY180042 -j $PROCS --job-name $IFILE --run adagio -i $IFILE
+#
+# historical:
+#
+# --post tells sierra to recombine all the exodus files
 # sierra -T 04:00:00 --queue-name batch,short --account FY180042 -j $PROCS --job-name $IFILE --run --post adagio -i $IFILE
 # sierra -T 4:30:00 --queue-name batch,short --account FY180042 -j $PROCS --job-name $IFILE --run --post adagio $IFILE
 # sierra -T 4:00:00 --queue-name batch,short --account FY180042 -j $PROCS --job-name vox_0.1cm_p --run --post adagio -i smooth_0.1cm.i

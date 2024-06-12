@@ -1,0 +1,7 @@
+#!/bin/bash
+
+sierra -T 12:00:00 --queue-name batch --account FY180100 -j 128 --job-name bob_066 --run --post adagio -i bob-1mm-5kg-helmet2-0305-hemi-066b.i
+#sierra -T 24:00:00 --queue-name batch --account FY180100 -j 128 --job-name bob_065d --pre --run --post adagio -i bob-1mm-5kg-helmet2-0305-hemi-065d.i
+#sierra -T 1:00:00 --account FY139077 -j 40 --job-name versa_void --post adagio -i 4inch_sce.i
+#sierra presto_itar -i 3inchOD_Ogive_32lb_Perforation.i --PROJTASK=FY128666 -j 8 --jobName=presto --pre --run --post -T 8:00:00 
+#sierra presto -i 3inchOD_Ogive_32lb_Perforation.i -j 8 --pre --run --post --T=4:00:00 
