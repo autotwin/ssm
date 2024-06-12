@@ -92,7 +92,7 @@ item | `sim` | mesh | bc (ms, krad/s) | T_sim (ms) | machine | # proc | cpu time
 1 | `bob066b` | Bob | 10, 3 | 6.57 | eclipse | 336 | 04:00 | 56
 2 | `bob067` | Bob | 10, 3 | 10 | eclipse | 336 | 02:35 | 36
 
-![](figs/simulaton_time_to_completion.png)
+![](figs/simulation_time_to_completion.png)
 
 > Figure 2: Analysis of time to completion for simulations. </br>Reference: `autotwin/ssm/analysis/simulaton_time_to_completion.xlsx` 
 
@@ -101,11 +101,14 @@ item | `sim` | mesh | bc (ms, krad/s) | T_sim (ms) | machine | # proc | cpu time
 3 | `bob068` | Bob | 10, 3 | 20 | eclipse | 336 | 05:57 | 83
 4 | `bob069` | Bob | 10, 3 | 20 | eclipse | 700 | 04:00 | 117
 
-![](figs/simulaton_time_to_completion_002.png)
+![](figs/simulation_time_to_completion_002.png)
 
 item | `sim` | mesh | bc (ms, krad/s) | T_sim (ms) | machine | # proc | cpu time (hh:mm) | wall time (days)
 :---: | :---: | :---: | :---: | ---: | :---: | ---: | ---: | ---: 
-5 | `a001` |  | 10, 3 | 20 | eclipse | 336 | - | -
+5 | `a001` |  | 10, 3 | 20 | eclipse | 336 | 02:86 | -
+6 | `a001_skybridge` |  | 10, 3 | 20 | skybridge | 336 | 03:36 | -
+
+![](figs/simulation_time_to_completion_003.png)
 
 ```bash
 ssh eclipse
