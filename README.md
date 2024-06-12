@@ -94,7 +94,7 @@ item | `sim` | mesh | bc (ms, krad/s) | T_sim (ms) | machine | # proc | cpu time
 
 ![](figs/simulation_time_to_completion.png)
 
-> Figure 2: Analysis of time to completion for simulations. </br>Reference: `autotwin/ssm/analysis/simulaton_time_to_completion.xlsx` 
+> Figure 2a: Analysis of time to completion for simulations. </br>Reference: `autotwin/ssm/analysis/simulaton_time_to_completion.xlsx` 
 
 item | `sim` | mesh | bc (ms, krad/s) | T_sim (ms) | machine | # proc | cpu time (hh:mm) | wall time (days)
 :---: | :---: | :---: | :---: | ---: | :---: | ---: | ---: | ---: 
@@ -103,12 +103,20 @@ item | `sim` | mesh | bc (ms, krad/s) | T_sim (ms) | machine | # proc | cpu time
 
 ![](figs/simulation_time_to_completion_002.png)
 
+> Figure 2b: Bob sims expanded to 20 ms, 336 versus 700 processors.
+
 item | `sim` | mesh | bc (ms, krad/s) | T_sim (ms) | machine | # proc | cpu time (hh:mm) | wall time (days)
 :---: | :---: | :---: | :---: | ---: | :---: | ---: | ---: | ---: 
 5 | `a001` |  | 10, 3 | 20 | eclipse | 336 | 02:86 | -
 6 | `a001_skybridge` |  | 10, 3 | 20 | skybridge | 336 | 03:36 | -
 
 ![](figs/simulation_time_to_completion_003.png)
+
+> Figure 2c: Autotwin a001 sim in context on elipse and skybride.
+
+![](figs/a001_anvil_bcs.gif)
+
+> Figure 3: Autotwin a001 MPS with anvil boundary conditions (falling toward head, positive z direction, then rotating nose up.)
 
 ```bash
 ssh eclipse
