@@ -118,6 +118,10 @@ item | `sim` | mesh | bc (ms, krad/s) | T_sim (ms) | machine | # proc | cpu time
 
 > Figure 3: Autotwin a001 MPS with anvil boundary conditions (falling toward head, positive z direction, then rotating nose up.)
 
+item | `sim` | bc (ms, krad/s) | T_sim (ms) | machine | # proc | cpu time (hh:mm)
+:---: | :---: | :---: | ---: | :---: | ---: | ---: |
+7 | `a002` | 8, 8| 20 | eclipse | 336 | xx:xx
+
 ```bash
 ssh eclipse
 
