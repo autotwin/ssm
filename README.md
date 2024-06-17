@@ -120,7 +120,17 @@ item | `sim` | mesh | bc (ms, krad/s) | T_sim (ms) | machine | # proc | cpu time
 
 item | `sim` | bc (ms, krad/s) | T_sim (ms) | machine | # proc | cpu time (hh:mm)
 :---: | :---: | :---: | ---: | :---: | ---: | ---: |
-7 | `a002` | 8, 8| 20 | eclipse | 336 | xx:xx
+7 | `a002` | 8, 8 | 20 | ghost | 336 | 00:48
+
+ambient | cross-section
+--- | ---
+![](figs/a002_ambient.png) | ![](figs/a002_clip_plane.png)
+
+> Figure 4: Autotwin a002 MPS at `t=0`, full view and axial section view.
+
+![](figs/a002_mps_evoluation.gif)
+
+> Figure 5: Autotwin a002 MPS evolution at `delta_t = 1 ms`, simultion time `20 ms`.
 
 ```bash
 ssh eclipse
@@ -181,6 +191,12 @@ mywcid
 sinfo
 squeue -u chovey
 squeue -u chovey --start
+
+# .bash_profile alias shortcuts
+alias sq="squeue -u chovey"
+alias ss="squeue -u chovey --start"
+
+# Sample scripts are available in /projects/samples/
 ```
 
 ## SSM Questions
