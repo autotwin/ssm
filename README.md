@@ -152,6 +152,10 @@ adagio --check-input  -i $IFILE
 ./submit_script
 ```
 
+## At scale
+
+* [122 segmentations](https://docs.google.com/presentation/d/1zyphVkUM7xKs0_gdqMSHUCTQJtJbtWCCy4FHsX16Efc/edit?usp=share_link)
+
 ## References
 
 * [casco_sim repo](https://cee-gitlab.sandia.gov/chovey/casco_sim)
