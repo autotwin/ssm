@@ -154,7 +154,7 @@ adagio --check-input  -i $IFILE
 
 ## At scale
 
-* [122 segmentations](https://docs.google.com/presentation/d/1zyphVkUM7xKs0_gdqMSHUCTQJtJbtWCCy4FHsX16Efc/edit?usp=share_link)
+* [122 segmentations](https://drive.google.com/drive/folders/158MXz03QCuockuRoSBpY-YuO4fni3RVD?usp=share_link)
 
 ## References
 
