@@ -1,6 +1,7 @@
 # ssm
 
-Sierra Solid Mechanics simulations
+* Sierra Solid Mechanics simulations (content of this page, see below)
+* [Smoothed meshes](smoothed.md)
 
 ## Goal
 
@@ -232,6 +233,7 @@ in favor of the three-material model from the `ensemble` repo.
 
 ## html style block
 
+```sh
 <style>
     .bone {
       background-color: #F5DEB3;
@@ -264,3 +266,4 @@ in favor of the three-material model from the `ensemble` repo.
       background-color: #D2B48C;
     }
 </style>
+```
