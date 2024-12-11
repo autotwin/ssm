@@ -174,6 +174,10 @@ Linear Acceleration | Rotational Acceleration | Rotational Velocity
 
 > Figure 4  `Bob-066b` - Terpsma 2020 SAND, at page 22, Table 3-1, helmeted Bob onto inclined anvil is simulation reference `Bob-066b`.  Boundary condition: experimental angular velocity time history (Figure 4-11), which is a time integration of the angular acceleration time history (Figure 4-10), around `X` axis ("yes" gesture head rotation).
 
+## Units
+
+All simulations herein use the Centimeter-Gram-Second (CGS) system. In this system, the unit of force is the dyne, which is defined as the force required to accelerate a mass of one gram at a rate of one centimeter per second squared.  Length units are centimeters.  Mass units are grams.  Time units are seconds.
+
 ## Color Codes
 
 | R     | G     | B     | R   | G   | B   | Block | Hex    |
