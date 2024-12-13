@@ -76,7 +76,8 @@ begin sierra simulation_name
     # database name = ../../geometry/a001/a001.e
     # database name = ../../geometry/a001/a001.e
     # database name = ../../geometry/sphere/spheres_resolution_2.exo
-    database name = ../../geometry/sphere/spheres_resolution_3.exo
+    # database name = ../../geometry/sphere/spheres_resolution_3.exo
+    database name = ../../geometry/sr2/spheres_resolution_3.exo
     database type = exodusII
 
     # ---------------
@@ -138,13 +139,13 @@ begin sierra simulation_name
 
       end time stepping block phase_1
 
-      termination time = 0.0001 # second
+      # termination time = 0.0001 # second
       # termination time = 0.001 # second
       # termination time = 0.006 # second
       # termination time = 0.008 # second
       # termination time = 0.010 # second
       # termination time = 0.012 # second
-      # termination time = 0.020 # second
+      termination time = 0.020 # second
       # termination time = 0.025 # second
       # termination time = 0.035 # second
       # termination time = 0.040 # second
@@ -317,7 +318,7 @@ begin sierra simulation_name
 
       begin heartbeat output rigid_body_file
 
-        stream name = rigid_history.csv
+        stream name = history_rigid.csv
         format = SpyHis
       # at time 0.0 increment = 0.00002    # seconds, 50,000 Hz acquisition
       # at time 0.0 increment = 0.00003    # seconds, 33,333 Hz acquisition
