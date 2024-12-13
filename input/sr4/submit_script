@@ -26,7 +26,9 @@ PROCS=160
 # GFILE="/projects/sibl/data/bob-1mm-5kg-helmet-hemi/bob-1mm-5kg-helmet2-hemi.g"
 # GFILE="../../geometry/bob-1mm-5kg-helmet2-hemi.g"
 # GFILE="../../geometry/a001/a001.e"
-GFILE="../../geometry/sphere/spheres_resolution_2.exo"
+# GFILE="../../geometry/sphere/spheres_resolution_2.exo"
+# GFILE="../../geometry/sphere/spheres_resolution_3.exo"
+GFILE="../../geometry/sphere/spheres_resolution_4.exo"
 
 # decomp --processors $PROCS $GFILE
 
@@ -35,7 +37,9 @@ GFILE="../../geometry/sphere/spheres_resolution_2.exo"
 # IFILE="bob067.i"
 # IFILE="bob068.i"
 # IFILE="a001.i"
-IFILE="sr2.i"
+# IFILE="sr2.i"
+# IFILE="sr3.i"
+IFILE="sr4.i"
 
 # queues
 # https://wiki.sandia.gov/pages/viewpage.action?pageId=1359570410#SlurmDocumentation-Queues
@@ -46,8 +50,8 @@ IFILE="sr2.i"
 # https://wiki.sandia.gov/display/OK/Slurm+Documentation
 # over 4 hours, then need to remove 'short' from the --queue-name
 #
-sierra -T 00:20:00 --queue-name batch,short --account FY180042 -j $PROCS --job-name $IFILE --run adagio -i $IFILE
-# sierra -T 04:00:00 --queue-name batch,short --account FY180042 -j $PROCS --job-name $IFILE --run adagio -i $IFILE
+# sierra -T 00:20:00 --queue-name batch,short --account FY180042 -j $PROCS --job-name $IFILE --run adagio -i $IFILE
+sierra -T 04:00:00 --queue-name batch,short --account FY180042 -j $PROCS --job-name $IFILE --run adagio -i $IFILE
 # sierra -T 06:00:00 --queue-name batch --account FY180042 -j $PROCS --job-name $IFILE --run adagio -i $IFILE
 # sierra -T 24:00:00 --queue-name batch --account FY180042 -j $PROCS --job-name $IFILE --run adagio -i $IFILE
 #
