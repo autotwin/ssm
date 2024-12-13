@@ -214,16 +214,16 @@ begin sierra simulation_name
           element variables = min_principal_log_strain  # real
           element variables = max_principal_log_strain  # real
           element variables = max_shear_log_strain      # real
-          element variables = min_principal_green_lagrange_strain # real
-          element variables = max_principal_green_lagrange_strain # real
+        # element variables = min_principal_green_lagrange_strain # real
+        # element variables = max_principal_green_lagrange_strain # real
         #
         # -----------
         # strain rate
         # -----------
           element variables = min_principal_rate_of_deformation # real
           element variables = max_principal_rate_of_deformation # real
-          element variables = min_principal_green_lagrange_strain_rate # real
-          element variables = max_principal_green_lagrange_strain_rate # real
+        # element variables = min_principal_green_lagrange_strain_rate # real
+        # element variables = max_principal_green_lagrange_strain_rate # real
 
         # ----
         # misc
