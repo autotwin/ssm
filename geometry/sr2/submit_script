@@ -17,7 +17,7 @@ PROCS=160
 # GFILE="/projects/sibl/data/bob-1mm-5kg-helmet-hemi/bob-1mm-5kg-helmet2-hemi.g"
 # GFILE="../../geometry/bob-1mm-5kg-helmet2-hemi.g"
 # GFILE="bob-1mm-5kg-helmet2-hemi.g"
-GFILE="sphere/sr2/spheres_resolution_2.exo"
+GFILE="spheres_resolution_2.exo"
 
 decomp --processors $PROCS $GFILE
 

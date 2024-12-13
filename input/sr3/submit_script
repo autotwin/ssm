@@ -29,7 +29,7 @@ PROCS=160
 # GFILE="../../geometry/sphere/spheres_resolution_2.exo"
 GFILE="../../geometry/sphere/spheres_resolution_3.exo"
 
-# decomp --processors $PROCS $GFILE
+decomp --processors $PROCS $GFILE
 
 # sierra solid mechanics input file
 # IFILE="bob-1mm-5kg-helmet2-0305-hemi-066b.i"

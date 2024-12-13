@@ -26,8 +26,7 @@ PROCS=160
 # GFILE="/projects/sibl/data/bob-1mm-5kg-helmet-hemi/bob-1mm-5kg-helmet2-hemi.g"
 # GFILE="../../geometry/bob-1mm-5kg-helmet2-hemi.g"
 # GFILE="../../geometry/a001/a001.e"
-GFILE="../../geometry/sphere/spheres_resolution_2.exo"
-
+# GFILE="../../geometry/sphere/spheres_resolution_2.exo"
 # decomp --processors $PROCS $GFILE
 
 # sierra solid mechanics input file

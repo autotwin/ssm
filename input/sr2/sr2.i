@@ -74,7 +74,10 @@ begin sierra simulation_name
     # database name = ../../geometry/a001/a001.e.1.0
     # database name = ../../geometry/a001/a001.e
     # database name = ../../geometry/a001/a001.e
-    database name = ../../geometry/sphere/spheres_resolution_2.exo
+    # database name = ../../geometry/sphere/spheres_resolution_2.exo
+    # database name = ../../geometry/sphere/sr2/spheres_resolution_2.exo
+    # database name = ~/autotwin/ssm/geometry/sphere/sr2/spheres_resolution_2.exo
+    database name = ../../geometry/sphere/sr2/spheres_resolution_2.exo
     database type = exodusII
 
     # ---------------
