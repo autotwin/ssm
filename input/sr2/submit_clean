@@ -1,0 +1,8 @@
+rm batch_*
+rm sierra_batch_*
+rm *.e.*
+rm epu.log
+rm *.g.*
+rm *.err
+rm g.rsout.*
+
