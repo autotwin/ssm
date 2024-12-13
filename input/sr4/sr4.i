@@ -261,7 +261,8 @@ begin sierra simulation_name
       # at time 0.0 increment = 0.00002    # seconds, 50,000 Hz acquisition
       # at time 0.0 increment = 0.00003    # seconds, 33,333 Hz acquisition
       # at time 0.0 increment = 0.0001     # seconds, 10,000 Hz acquisition
-        at time 0.0 increment = 0.0005     # seconds,  2,000 Hz acquisition
+        at time 0.0 increment = 0.00025    # seconds,  4,000 Hz acquisition
+      # at time 0.0 increment = 0.0005     # seconds,  2,000 Hz acquisition
       # at time 0.0 increment = 0.001      # seconds,  1,000 Hz acquisition
 
         # -----------------------------
@@ -325,7 +326,8 @@ begin sierra simulation_name
       # at time 0.0 increment = 0.00002    # seconds, 50,000 Hz acquisition
       # at time 0.0 increment = 0.00003    # seconds, 33,333 Hz acquisition
       # at time 0.0 increment = 0.0001     # seconds, 10,000 Hz acquisition
-        at time 0.0 increment = 0.0005     # seconds,  2,000 Hz acquisition
+        at time 0.0 increment = 0.00025    # seconds,  4,000 Hz acquisition
+      # at time 0.0 increment = 0.0005     # seconds,  2,000 Hz acquisition
 
         # -----------------------------
         # rigid body
