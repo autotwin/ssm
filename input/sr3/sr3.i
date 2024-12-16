@@ -13,6 +13,12 @@ begin sierra simulation_name
   # -----
 
   # ---------------------------------------------------------------------------
+  # constants
+  # -----------------
+  # foo = { foo = sqrt(2.0)/2.0 }
+  # experiment_angle = {experiment_angle = 45}
+
+  # ---------------------------------------------------------------------------
   # include files
   # -----------------
 
@@ -33,6 +39,10 @@ begin sierra simulation_name
 
   # define axis cg_rotation_axis with point cg direction x_positive
   define axis cg_rotation_axis with point cg direction z_positive
+
+  define direction adir with vector 1.0 0.0 0.0
+  define direction bdir with vector {0.0} {cosd( experiment_angle )} {sind(experiment_angle)}
+  define direction cdir with vector {0.0} {-sind( experiment_angle )} {cosd(experiment_angle)}
 
   # ---------------------------------------------------------------------------
   # user functions 
@@ -267,47 +277,47 @@ begin sierra simulation_name
         # deformable body
         # -----------------------------
 
-        nodal displacement nearest location  0. 0. 0. as  u0
-        nodal displacement nearest location  1. 0. 0. as  u1
-        nodal displacement nearest location  2. 0. 0. as  u2
-        nodal displacement nearest location  3. 0. 0. as  u3
-        nodal displacement nearest location  4. 0. 0. as  u4
-        nodal displacement nearest location  5. 0. 0. as  u5
-        nodal displacement nearest location  6. 0. 0. as  u6
-        nodal displacement nearest location  7. 0. 0. as  u7
-        nodal displacement nearest location  8. 0. 0. as  u8
-        nodal displacement nearest location  9. 0. 0. as  u9
-        nodal displacement nearest location 10. 0. 0. as u10
-        nodal displacement nearest location 11. 0. 0. as u11
-        nodal displacement nearest location 12. 0. 0. as u12
+        nodal displacement nearest location { 0. * foo} { 0. * foo} 0. as  u0
+        nodal displacement nearest location { 1. * foo} { 1. * foo} 0. as  u1
+        nodal displacement nearest location { 2. * foo} { 2. * foo} 0. as  u2
+        nodal displacement nearest location { 3. * foo} { 3. * foo} 0. as  u3
+        nodal displacement nearest location { 4. * foo} { 4. * foo} 0. as  u4
+        nodal displacement nearest location { 5. * foo} { 5. * foo} 0. as  u5
+        nodal displacement nearest location { 6. * foo} { 6. * foo} 0. as  u6
+        nodal displacement nearest location { 7. * foo} { 7. * foo} 0. as  u7
+        nodal displacement nearest location { 8. * foo} { 8. * foo} 0. as  u8
+        nodal displacement nearest location { 9. * foo} { 9. * foo} 0. as  u9
+        nodal displacement nearest location {10. * foo} {10. * foo} 0. as u10
+        nodal displacement nearest location {11. * foo} {11. * foo} 0. as u11
+        nodal displacement nearest location {12. * foo} {12. * foo} 0. as u12
 
-        element max_principal_log_strain nearest location  0. 0. 0. as  e0
-        element max_principal_log_strain nearest location  1. 0. 0. as  e1
-        element max_principal_log_strain nearest location  2. 0. 0. as  e2
-        element max_principal_log_strain nearest location  3. 0. 0. as  e3
-        element max_principal_log_strain nearest location  4. 0. 0. as  e4
-        element max_principal_log_strain nearest location  5. 0. 0. as  e5
-        element max_principal_log_strain nearest location  6. 0. 0. as  e6
-        element max_principal_log_strain nearest location  7. 0. 0. as  e7
-        element max_principal_log_strain nearest location  8. 0. 0. as  e8
-        element max_principal_log_strain nearest location  9. 0. 0. as  e9
-        element max_principal_log_strain nearest location 10. 0. 0. as e10
-        element max_principal_log_strain nearest location 11. 0. 0. as e11
-        element max_principal_log_strain nearest location 12. 0. 0. as e12
+        element max_principal_log_strain nearest location { 0. * foo} { 0. * foo} 0. as  e0
+        element max_principal_log_strain nearest location { 1. * foo} { 1. * foo} 0. as  e1
+        element max_principal_log_strain nearest location { 2. * foo} { 2. * foo} 0. as  e2
+        element max_principal_log_strain nearest location { 3. * foo} { 3. * foo} 0. as  e3
+        element max_principal_log_strain nearest location { 4. * foo} { 4. * foo} 0. as  e4
+        element max_principal_log_strain nearest location { 5. * foo} { 5. * foo} 0. as  e5
+        element max_principal_log_strain nearest location { 6. * foo} { 6. * foo} 0. as  e6
+        element max_principal_log_strain nearest location { 7. * foo} { 7. * foo} 0. as  e7
+        element max_principal_log_strain nearest location { 8. * foo} { 8. * foo} 0. as  e8
+        element max_principal_log_strain nearest location { 9. * foo} { 9. * foo} 0. as  e9
+        element max_principal_log_strain nearest location {10. * foo} {10. * foo} 0. as e10
+        element max_principal_log_strain nearest location {11. * foo} {11. * foo} 0. as e11
+        element max_principal_log_strain nearest location {12. * foo} {12. * foo} 0. as e12
 
-        element max_principal_rate_of_deformation nearest location  0. 0. 0. as  d0
-        element max_principal_rate_of_deformation nearest location  1. 0. 0. as  d1
-        element max_principal_rate_of_deformation nearest location  2. 0. 0. as  d2
-        element max_principal_rate_of_deformation nearest location  3. 0. 0. as  d3
-        element max_principal_rate_of_deformation nearest location  4. 0. 0. as  d4
-        element max_principal_rate_of_deformation nearest location  5. 0. 0. as  d5
-        element max_principal_rate_of_deformation nearest location  6. 0. 0. as  d6
-        element max_principal_rate_of_deformation nearest location  7. 0. 0. as  d7
-        element max_principal_rate_of_deformation nearest location  8. 0. 0. as  d8
-        element max_principal_rate_of_deformation nearest location  9. 0. 0. as  d9
-        element max_principal_rate_of_deformation nearest location 10. 0. 0. as d10
-        element max_principal_rate_of_deformation nearest location 11. 0. 0. as d11
-        element max_principal_rate_of_deformation nearest location 12. 0. 0. as d12
+        element max_principal_rate_of_deformation nearest location { 0. * foo} { 0. * foo} 0. as  d0
+        element max_principal_rate_of_deformation nearest location { 1. * foo} { 1. * foo} 0. as  d1
+        element max_principal_rate_of_deformation nearest location { 2. * foo} { 2. * foo} 0. as  d2
+        element max_principal_rate_of_deformation nearest location { 3. * foo} { 3. * foo} 0. as  d3
+        element max_principal_rate_of_deformation nearest location { 4. * foo} { 4. * foo} 0. as  d4
+        element max_principal_rate_of_deformation nearest location { 5. * foo} { 5. * foo} 0. as  d5
+        element max_principal_rate_of_deformation nearest location { 6. * foo} { 6. * foo} 0. as  d6
+        element max_principal_rate_of_deformation nearest location { 7. * foo} { 7. * foo} 0. as  d7
+        element max_principal_rate_of_deformation nearest location { 8. * foo} { 8. * foo} 0. as  d8
+        element max_principal_rate_of_deformation nearest location { 9. * foo} { 9. * foo} 0. as  d9
+        element max_principal_rate_of_deformation nearest location {10. * foo} {10. * foo} 0. as d10
+        element max_principal_rate_of_deformation nearest location {11. * foo} {11. * foo} 0. as d11
+        element max_principal_rate_of_deformation nearest location {12. * foo} {12. * foo} 0. as d12
 
         global external_energy  as ee
         global internal_energy  as ie
