@@ -49,6 +49,29 @@ begin sierra simulation_name
 
   {include("../../bcs/shell_rotation.txt")}
 
+  # -------------------------------
+  begin function disp_mag
+    type = analytic
+    expression variable: x = nodal displacement(x)
+    expression variable: y = nodal displacement(y)
+    expression variable: z = nodal displacement(z)
+    evaluate expression = "sqrt(x*x + y*y + z*z)"
+  end function disp_mag
+
+  # Define using named vector components
+  BEGIN FUNCTION velocity_vec
+    TYPE = analytic
+    EXPRESSION variable: V = nodal_vector velocity
+    EVALUATE EXPRESSION = "sqrt((V_x)^2 + (V_y)^2 + (V_z)^2 )"
+  END
+
+  # Define using named vector components
+  BEGIN FUNCTION disp_vec
+    TYPE = analytic
+    EXPRESSION variable: U = nodal_vector displacement
+    EVALUATE EXPRESSION = "sqrt((U_x)^2 + (U_y)^2 + (U_z)^2 )"
+  END
+
   # ---------------------------------------------------------------------------
   # materials: listed in alphabetical order
   # ---------
@@ -261,6 +284,14 @@ begin sierra simulation_name
 
       end results output field_exodus
 
+      
+      # -------------------------------
+      begin user output
+        compute nodal speed1 as function velocity_vec
+        # compute nodal foobar from expression "sqrt(displacement(x)*displacement(x) + displacement(y)*displacement(y) + displacement(z)*displacement(z))"
+        compute nodal foobar as function disp_vec
+      end 
+
       # -------------------------------
       begin heartbeat output hscth_file
 
@@ -290,6 +321,44 @@ begin sierra simulation_name
         nodal displacement nearest location {10. * foo} {10. * foo} 0. as u10
         nodal displacement nearest location {11. * foo} {11. * foo} 0. as u11
         nodal displacement nearest location {12. * foo} {12. * foo} 0. as u12
+
+        # compute nodal disp_mag nearest location { 0. * foo} { 0. * foo} 0. as  u0mag
+        # compute nodal disp_mag nearest location { 1. * foo} { 1. * foo} 0. as  u1mag
+        # compute nodal disp_mag nearest location { 2. * foo} { 2. * foo} 0. as  u2mag
+        # compute nodal disp_mag nearest location { 3. * foo} { 3. * foo} 0. as  u3mag
+        # compute nodal disp_mag nearest location { 4. * foo} { 4. * foo} 0. as  u4mag
+        # compute nodal disp_mag nearest location { 5. * foo} { 5. * foo} 0. as  u5mag
+        # compute nodal disp_mag nearest location { 6. * foo} { 6. * foo} 0. as  u6mag
+        # compute nodal disp_mag nearest location { 7. * foo} { 7. * foo} 0. as  u7mag
+        # compute nodal disp_mag nearest location { 8. * foo} { 8. * foo} 0. as  u8mag
+        # compute nodal disp_mag nearest location { 9. * foo} { 9. * foo} 0. as  u9mag
+        # compute nodal disp_mag nearest location {10. * foo} {10. * foo} 0. as u10mag
+        # compute nodal disp_mag nearest location {11. * foo} {11. * foo} 0. as u11mag
+        # compute nodal disp_mag nearest location {12. * foo} {12. * foo} 0. as u12mag
+
+        # compute nodal  u0mag nearest location { 0. * foo} { 0. * foo} 0. as function disp_mag
+        # compute nodal  u1mag nearest location { 1. * foo} { 1. * foo} 0. as function disp_mag
+        # compute nodal  u2mag nearest location { 2. * foo} { 2. * foo} 0. as function disp_mag
+        # compute nodal  u3mag nearest location { 3. * foo} { 3. * foo} 0. as function disp_mag
+        # compute nodal  u4mag nearest location { 4. * foo} { 4. * foo} 0. as function disp_mag
+        # compute nodal  u5mag nearest location { 5. * foo} { 5. * foo} 0. as function disp_mag
+        # compute nodal  u6mag nearest location { 6. * foo} { 6. * foo} 0. as function disp_mag
+        # compute nodal  u7mag nearest location { 7. * foo} { 7. * foo} 0. as function disp_mag
+        # compute nodal  u8mag nearest location { 8. * foo} { 8. * foo} 0. as function disp_mag
+        # compute nodal  u9mag nearest location { 9. * foo} { 9. * foo} 0. as function disp_mag
+        # compute nodal u10mag nearest location {10. * foo} {10. * foo} 0. as function disp_mag
+        # compute nodal u11mag nearest location {11. * foo} {11. * foo} 0. as function disp_mag
+        # compute nodal u12mag nearest location {12. * foo} {12. * foo} 0. as function disp_mag
+
+        # compute nodal foobar from expression "sqrt(displacement(x)*displacement(x) + displacement(y)*displacement(y) + displacement(z)*displacement(z))" nearest location {5. * foo} {5. * foo} 0. 
+        # foobar nearest location { 5. * foo} { 5. * foo} 0. as foobar_5
+        nodal foobar nearest location { 5. * foo} { 5. * foo} 0. as u5
+        nodal foobar nearest location { 6. * foo} { 6. * foo} 0. as u6
+        nodal foobar nearest location { 7. * foo} { 7. * foo} 0. as u7
+
+        # compute nodal foobar5 as function disp_mag nearest location {5. * foo} {5. * foo} 0. 
+        # compute nodal speed1 as function velocity_vec
+        # compute nodal function speed1 nearest location { 5. * foo} { 5. * foo} 0. as function speed1_5
 
         element max_principal_log_strain nearest location { 0. * foo} { 0. * foo} 0. as  e0
         element max_principal_log_strain nearest location { 1. * foo} { 1. * foo} 0. as  e1
