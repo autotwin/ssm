@@ -5,7 +5,6 @@ begin sierra simulation_name
   # parent file: ~/autotwin/ssm/input/bob068/bob-1mm-5kg-helmet2-0305-hemi-068.i
   # parent file: ~/autotwin/ssm/input/a001/a001.i
   # see also:    ~/autotwin/basis/spheres/ssm/smooth_1cm/smooth_1cm.i
-  # parent file: ~/autotwin/ssm/input/sr2/sr2.i
   # This is sphere_with_shell analysis, resolution_3
 
   # ------------------------------------
@@ -50,6 +49,21 @@ begin sierra simulation_name
 
   {include("../../bcs/shell_rotation.txt")}
 
+  # -------------------------------
+  # Define using named vector components
+  begin function velocity_mag
+    type = analytic
+    expression variable: V = nodal_vector velocity
+    evaluate expression = "sqrt((V_x)^2 + (V_y)^2 + (V_z)^2 )"
+  end
+
+  # Define using named vector components
+  begin function disp_mag
+    type = analytic
+    expression variable: U = nodal_vector displacement
+    evaluate expression = "sqrt((U_x)^2 + (U_y)^2 + (U_z)^2 )"
+  end
+
   # ---------------------------------------------------------------------------
   # materials: listed in alphabetical order
   # ---------
@@ -59,16 +73,18 @@ begin sierra simulation_name
   {include("../../material/whitematter.txt")}
 
   begin rigid body rigidSkull
+
     # reference location = 33.6315 21.4892 12.3570
     # reference location = cg  # did not work
     # reference location = 7.55 9.25 7.75 # a001
-    reference location = 0.0 0.0 0.0 # spheres_res_2
-    #
+    reference location = 0.0 0.0 0.0
+
     # magnitude = 1000.0
     # direction = y_positive
     # angular velocity = 1570.0 # 90 deg rotation at t=0.001
     # angular velocity = 1000.0
     # cylindrical axis = cg_rotation_axis
+
   end rigid body rigidSkull
   
   begin solid section rigidSection
@@ -86,7 +102,8 @@ begin sierra simulation_name
     # database name = ../../geometry/a001/a001.e
     # database name = ../../geometry/a001/a001.e
     # database name = ../../geometry/sphere/spheres_resolution_2.exo
-    # database name = ../../geometry/sphere/spheres_resolution_3.exo
+    # database name = ../../geometry/sphere/sr2/spheres_resolution_2.exo
+    # database name = ~/autotwin/ssm/geometry/sphere/sr2/spheres_resolution_2.exo
     database name = ../../geometry/sr3/spheres_resolution_3.exo
     database type = exodusII
 
@@ -261,6 +278,44 @@ begin sierra simulation_name
 
       end results output field_exodus
 
+
+      # -------------------------------
+      begin user output
+
+        include all blocks
+
+        # compute nodal speed1 as function velocity_mag
+        compute nodal foobar as function disp_mag
+
+        # compute global  g0 as interpolation of nodal displacement at point { 0. * foo} { 0. * foo} 0.
+        # compute global  g1 as interpolation of nodal displacement at point { 1. * foo} { 1. * foo} 0.
+        # compute global  g2 as interpolation of nodal displacement at point { 2. * foo} { 2. * foo} 0.
+        # compute global  g3 as interpolation of nodal displacement at point { 3. * foo} { 3. * foo} 0.
+        # compute global  g4 as interpolation of nodal displacement at point { 4. * foo} { 4. * foo} 0.
+        # compute global  g5 as interpolation of nodal displacement at point { 5. * foo} { 5. * foo} 0.
+        # compute global  g6 as interpolation of nodal displacement at point { 6. * foo} { 6. * foo} 0.
+        # compute global  g7 as interpolation of nodal displacement at point { 7. * foo} { 7. * foo} 0.
+        # compute global  g8 as interpolation of nodal displacement at point { 8. * foo} { 8. * foo} 0.
+        # compute global  g9 as interpolation of nodal displacement at point { 9. * foo} { 9. * foo} 0.
+        # compute global g10 as interpolation of nodal displacement at point {10. * foo} {10. * foo} 0.
+        # compute global g11 as interpolation of nodal displacement at point {11. * foo} {11. * foo} 0.
+        # compute global g12 as interpolation of nodal displacement at point {12. * foo} {12. * foo} 0.
+
+        # compute global  h0 as magnitude of global  g0
+        # compute global  h1 as magnitude of global  g1
+        # compute global  h2 as magnitude of global  g2
+        # compute global  h3 as magnitude of global  g3
+        # compute global  h4 as magnitude of global  g4
+        # compute global  h5 as magnitude of global  g5
+        # compute global  h6 as magnitude of global  g6
+        # compute global  h7 as magnitude of global  g7
+        # compute global  h8 as magnitude of global  g8
+        # compute global  h9 as magnitude of global  g9
+        # compute global h10 as magnitude of global g10
+        # compute global h11 as magnitude of global g11
+        # compute global h12 as magnitude of global g12
+      end
+
       # -------------------------------
       begin heartbeat output hscth_file
 
@@ -269,7 +324,7 @@ begin sierra simulation_name
       # at time 0.0 increment = 0.00002    # seconds, 50,000 Hz acquisition
       # at time 0.0 increment = 0.00003    # seconds, 33,333 Hz acquisition
       # at time 0.0 increment = 0.0001     # seconds, 10,000 Hz acquisition
-        at time 0.0 increment = 0.00025    # seconds,  4,000 Hz acquisition 
+        at time 0.0 increment = 0.00025    # seconds,  4,000 Hz acquisition
       # at time 0.0 increment = 0.0005     # seconds,  2,000 Hz acquisition
       # at time 0.0 increment = 0.001      # seconds,  1,000 Hz acquisition
 
@@ -277,19 +332,33 @@ begin sierra simulation_name
         # deformable body
         # -----------------------------
 
-        nodal displacement nearest location { 0. * foo} { 0. * foo} 0. as  u0
-        nodal displacement nearest location { 1. * foo} { 1. * foo} 0. as  u1
-        nodal displacement nearest location { 2. * foo} { 2. * foo} 0. as  u2
-        nodal displacement nearest location { 3. * foo} { 3. * foo} 0. as  u3
-        nodal displacement nearest location { 4. * foo} { 4. * foo} 0. as  u4
-        nodal displacement nearest location { 5. * foo} { 5. * foo} 0. as  u5
-        nodal displacement nearest location { 6. * foo} { 6. * foo} 0. as  u6
-        nodal displacement nearest location { 7. * foo} { 7. * foo} 0. as  u7
-        nodal displacement nearest location { 8. * foo} { 8. * foo} 0. as  u8
-        nodal displacement nearest location { 9. * foo} { 9. * foo} 0. as  u9
-        nodal displacement nearest location {10. * foo} {10. * foo} 0. as u10
-        nodal displacement nearest location {11. * foo} {11. * foo} 0. as u11
-        nodal displacement nearest location {12. * foo} {12. * foo} 0. as u12
+        # nodal displacement nearest location { 0. * foo} { 0. * foo} 0. as  u0
+        # nodal displacement nearest location { 1. * foo} { 1. * foo} 0. as  u1
+        # nodal displacement nearest location { 2. * foo} { 2. * foo} 0. as  u2
+        # nodal displacement nearest location { 3. * foo} { 3. * foo} 0. as  u3
+        # nodal displacement nearest location { 4. * foo} { 4. * foo} 0. as  u4
+        # nodal displacement nearest location { 5. * foo} { 5. * foo} 0. as  u5
+        # nodal displacement nearest location { 6. * foo} { 6. * foo} 0. as  u6
+        # nodal displacement nearest location { 7. * foo} { 7. * foo} 0. as  u7
+        # nodal displacement nearest location { 8. * foo} { 8. * foo} 0. as  u8
+        # nodal displacement nearest location { 9. * foo} { 9. * foo} 0. as  u9
+        # nodal displacement nearest location {10. * foo} {10. * foo} 0. as u10
+        # nodal displacement nearest location {11. * foo} {11. * foo} 0. as u11
+        # nodal displacement nearest location {12. * foo} {12. * foo} 0. as u12
+
+        nodal foobar nearest location { 0. * foo} { 0. * foo} 0. as  u0
+        nodal foobar nearest location { 1. * foo} { 1. * foo} 0. as  u1
+        nodal foobar nearest location { 2. * foo} { 2. * foo} 0. as  u2
+        nodal foobar nearest location { 3. * foo} { 3. * foo} 0. as  u3
+        nodal foobar nearest location { 4. * foo} { 4. * foo} 0. as  u4
+        nodal foobar nearest location { 5. * foo} { 5. * foo} 0. as  u5
+        nodal foobar nearest location { 6. * foo} { 6. * foo} 0. as  u6
+        nodal foobar nearest location { 7. * foo} { 7. * foo} 0. as  u7
+        nodal foobar nearest location { 8. * foo} { 8. * foo} 0. as  u8
+        nodal foobar nearest location { 9. * foo} { 9. * foo} 0. as  u9
+        nodal foobar nearest location {10. * foo} {10. * foo} 0. as u10
+        nodal foobar nearest location {11. * foo} {11. * foo} 0. as u11
+        nodal foobar nearest location {12. * foo} {12. * foo} 0. as u12
 
         element max_principal_log_strain nearest location { 0. * foo} { 0. * foo} 0. as  e0
         element max_principal_log_strain nearest location { 1. * foo} { 1. * foo} 0. as  e1

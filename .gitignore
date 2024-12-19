@@ -1,3 +1,7 @@
+# Genesis/Exodus files
+*.exo
+*.exo.*
+*.sh
 # Genesis/Exodus intermediate files
 *.g.*
 *.e.*

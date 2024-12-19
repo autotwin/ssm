@@ -77,7 +77,7 @@ begin sierra simulation_name
     # reference location = 33.6315 21.4892 12.3570
     # reference location = cg  # did not work
     # reference location = 7.55 9.25 7.75 # a001
-    reference location = 0.0 0.0 0.0 # spheres_res_2
+    reference location = 0.0 0.0 0.0
 
     # magnitude = 1000.0
     # direction = y_positive
@@ -278,7 +278,7 @@ begin sierra simulation_name
 
       end results output field_exodus
 
-      
+
       # -------------------------------
       begin user output
 
