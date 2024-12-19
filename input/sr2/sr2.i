@@ -51,14 +51,14 @@ begin sierra simulation_name
 
   # -------------------------------
   # Define using named vector components
-  begin function velocity_vec
+  begin function velocity_mag
     type = analytic
     expression variable: V = nodal_vector velocity
     evaluate expression = "sqrt((V_x)^2 + (V_y)^2 + (V_z)^2 )"
   end
 
   # Define using named vector components
-  begin function disp_vec
+  begin function disp_mag
     type = analytic
     expression variable: U = nodal_vector displacement
     evaluate expression = "sqrt((U_x)^2 + (U_y)^2 + (U_z)^2 )"
@@ -73,16 +73,18 @@ begin sierra simulation_name
   {include("../../material/whitematter.txt")}
 
   begin rigid body rigidSkull
+
     # reference location = 33.6315 21.4892 12.3570
     # reference location = cg  # did not work
     # reference location = 7.55 9.25 7.75 # a001
     reference location = 0.0 0.0 0.0 # spheres_res_2
-    #
+
     # magnitude = 1000.0
     # direction = y_positive
     # angular velocity = 1570.0 # 90 deg rotation at t=0.001
     # angular velocity = 1000.0
     # cylindrical axis = cg_rotation_axis
+
   end rigid body rigidSkull
   
   begin solid section rigidSection
@@ -279,9 +281,40 @@ begin sierra simulation_name
       
       # -------------------------------
       begin user output
-        compute nodal speed1 as function velocity_vec
-        compute nodal foobar as function disp_vec
-      end 
+
+        include all blocks
+
+        # compute nodal speed1 as function velocity_mag
+        compute nodal foobar as function disp_mag
+
+        # compute global  g0 as interpolation of nodal displacement at point { 0. * foo} { 0. * foo} 0.
+        # compute global  g1 as interpolation of nodal displacement at point { 1. * foo} { 1. * foo} 0.
+        # compute global  g2 as interpolation of nodal displacement at point { 2. * foo} { 2. * foo} 0.
+        # compute global  g3 as interpolation of nodal displacement at point { 3. * foo} { 3. * foo} 0.
+        # compute global  g4 as interpolation of nodal displacement at point { 4. * foo} { 4. * foo} 0.
+        # compute global  g5 as interpolation of nodal displacement at point { 5. * foo} { 5. * foo} 0.
+        # compute global  g6 as interpolation of nodal displacement at point { 6. * foo} { 6. * foo} 0.
+        # compute global  g7 as interpolation of nodal displacement at point { 7. * foo} { 7. * foo} 0.
+        # compute global  g8 as interpolation of nodal displacement at point { 8. * foo} { 8. * foo} 0.
+        # compute global  g9 as interpolation of nodal displacement at point { 9. * foo} { 9. * foo} 0.
+        # compute global g10 as interpolation of nodal displacement at point {10. * foo} {10. * foo} 0.
+        # compute global g11 as interpolation of nodal displacement at point {11. * foo} {11. * foo} 0.
+        # compute global g12 as interpolation of nodal displacement at point {12. * foo} {12. * foo} 0.
+
+        # compute global  h0 as magnitude of global  g0
+        # compute global  h1 as magnitude of global  g1
+        # compute global  h2 as magnitude of global  g2
+        # compute global  h3 as magnitude of global  g3
+        # compute global  h4 as magnitude of global  g4
+        # compute global  h5 as magnitude of global  g5
+        # compute global  h6 as magnitude of global  g6
+        # compute global  h7 as magnitude of global  g7
+        # compute global  h8 as magnitude of global  g8
+        # compute global  h9 as magnitude of global  g9
+        # compute global h10 as magnitude of global g10
+        # compute global h11 as magnitude of global g11
+        # compute global h12 as magnitude of global g12
+      end
 
       # -------------------------------
       begin heartbeat output hscth_file
