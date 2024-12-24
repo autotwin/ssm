@@ -5,7 +5,7 @@ begin sierra simulation_name
   # parent file: ~/autotwin/ssm/input/bob068/bob-1mm-5kg-helmet2-0305-hemi-068.i
   # parent file: ~/autotwin/ssm/input/a001/a001.i
   # see also:    ~/autotwin/basis/spheres/ssm/smooth_1cm/smooth_1cm.i
-  # This is sphere_with_shell analysis, resolution_2
+  # This is sphere_with_shell analysis, resolution_2, conforming
 
   # ------------------------------------
   # units: grams, centimeters, seconds
@@ -104,7 +104,7 @@ begin sierra simulation_name
     # database name = ../../geometry/sphere/spheres_resolution_2.exo
     # database name = ../../geometry/sphere/sr2/spheres_resolution_2.exo
     # database name = ~/autotwin/ssm/geometry/sphere/sr2/spheres_resolution_2.exo
-    database name = ../../geometry/sr2/spheres_resolution_2.exo
+    database name = ../../geometry/sr2c/conf_0.5cm.g
     database type = exodusII
 
     # ---------------
