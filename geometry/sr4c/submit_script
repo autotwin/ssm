@@ -1,0 +1,25 @@
+#!/bin/bash
+
+module purge
+module load sierra
+module load seacas
+
+# previously ran with 16 processors
+# PROCS=16
+# 10 nodes = 160 processors
+PROCS=160
+# PROCS=320
+# PROCS=336
+
+# geometry and mesh file
+# GFILE="../geometry/bob-1mm-5kg-helmet2-hemi.g"
+# GFILE="/projects/sibl/data/bob-1mm-5kg-helmet-hemi/bob-1mm-5kg-helmet2-hemi.g"
+# GFILE="/projects/sibl/data/bob-1mm-5kg-helmet-hemi/bob-1mm-5kg-helmet2-hemi.g"
+# GFILE="../../geometry/bob-1mm-5kg-helmet2-hemi.g"
+# GFILE="bob-1mm-5kg-helmet2-hemi.g"
+GFILE="conf_0.1cm.g"
+
+decomp --processors $PROCS $GFILE
+
+# short can be used for nodes <= 40 and wall time <= 4:00:00 (4 hours)
+
