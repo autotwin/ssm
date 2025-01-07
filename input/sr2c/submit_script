@@ -34,7 +34,7 @@ PROCS=160
 # IFILE="bob067.i"
 # IFILE="bob068.i"
 # IFILE="a001.i"
-IFILE="sr3c.i"
+IFILE="sr2c.i"
 
 # queues
 # https://wiki.sandia.gov/pages/viewpage.action?pageId=1359570410#SlurmDocumentation-Queues
@@ -45,9 +45,8 @@ IFILE="sr3c.i"
 # https://wiki.sandia.gov/display/OK/Slurm+Documentation
 # over 4 hours, then need to remove 'short' from the --queue-name
 #
-# sierra -T 00:05:00 --queue-name batch,short --account FY180042 -j $PROCS --job-name $IFILE --run adagio -i $IFILE
+sierra -T 00:05:00 --queue-name batch,short --account FY180042 -j $PROCS --job-name $IFILE --run adagio -i $IFILE
 #sierra -T 00:20:00 --queue-name batch,short --account FY180042 -j $PROCS --job-name $IFILE --run adagio -i $IFILE
-sierra -T 00:40:00 --queue-name batch,short --account FY180042 -j $PROCS --job-name $IFILE --run adagio -i $IFILE
 #sierra -T 04:00:00 --queue-name batch,short --account FY180042 -j $PROCS --job-name $IFILE --run adagio -i $IFILE
 # sierra -T 06:00:00 --queue-name batch --account FY180042 -j $PROCS --job-name $IFILE --run adagio -i $IFILE
 # sierra -T 24:00:00 --queue-name batch --account FY180042 -j $PROCS --job-name $IFILE --run adagio -i $IFILE
