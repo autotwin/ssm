@@ -5,7 +5,7 @@ begin sierra simulation_name
   # parent file: ~/autotwin/ssm/input/bob068/bob-1mm-5kg-helmet2-0305-hemi-068.i
   # parent file: ~/autotwin/ssm/input/a001/a001.i
   # see also:    ~/autotwin/basis/spheres/ssm/smooth_1cm/smooth_1cm.i
-  # This is sphere_with_shell analysis, resolution_2, conforming
+  # This is sphere_with_shell analysis, resolution_4, conforming
 
   # ------------------------------------
   # units: grams, centimeters, seconds
@@ -104,7 +104,7 @@ begin sierra simulation_name
     # database name = ../../geometry/sphere/spheres_resolution_2.exo
     # database name = ../../geometry/sphere/sr2/spheres_resolution_2.exo
     # database name = ~/autotwin/ssm/geometry/sphere/sr2/spheres_resolution_2.exo
-    database name = ../../geometry/sr2c/conf_0.5cm.g
+    database name = ../../geometry/sr4c/conf_0.1cm.g
     database type = exodusII
 
     # ---------------
@@ -323,8 +323,8 @@ begin sierra simulation_name
         format = SpyHis
       # at time 0.0 increment = 0.00002    # seconds, 50,000 Hz acquisition
       # at time 0.0 increment = 0.00003    # seconds, 33,333 Hz acquisition
-        at time 0.0 increment = 0.0001     # seconds, 10,000 Hz acquisition
-      # at time 0.0 increment = 0.00025    # seconds,  4,000 Hz acquisition
+      # at time 0.0 increment = 0.0001     # seconds, 10,000 Hz acquisition
+        at time 0.0 increment = 0.00025    # seconds,  4,000 Hz acquisition
       # at time 0.0 increment = 0.0005     # seconds,  2,000 Hz acquisition
       # at time 0.0 increment = 0.001      # seconds,  1,000 Hz acquisition
 
@@ -416,8 +416,8 @@ begin sierra simulation_name
         format = SpyHis
       # at time 0.0 increment = 0.00002    # seconds, 50,000 Hz acquisition
       # at time 0.0 increment = 0.00003    # seconds, 33,333 Hz acquisition
-      # at time 0.0 increment = 0.0001     # seconds, 10,000 Hz acquisition
-        at time 0.0 increment = 0.00025    # seconds,  4,000 Hz acquisition
+        at time 0.0 increment = 0.0001     # seconds, 10,000 Hz acquisition
+      # at time 0.0 increment = 0.00025    # seconds,  4,000 Hz acquisition
       # at time 0.0 increment = 0.0005     # seconds,  2,000 Hz acquisition
 
         # -----------------------------
